@@ -1,9 +1,9 @@
 <main class="auth">
-    <h2 class="auth__heading"><?php echo $titulo; ?></h2>
-    <p class="auth__text">Crear la teva compte</p> 
+    <h2 class="auth__heading"><?php echo $titol; ?></h2>
+    <p class="auth__text">Introdueix les teves dades personals</p> 
 
     <?php 
-        require_once __DIR__ . '/../templates/alertas.php';
+        require_once __DIR__ . '/../templates/alertes.php';
     ?>
 
     <form method="POST" action="/registre" class="formulari">
@@ -59,7 +59,7 @@
             <input
                 type="password"
                 class="formulari__input"
-                placeholder="Repetir Password"
+                placeholder="Repeteix la teva contrasenya"
                 id="password2"
                 name="password2"
             >
