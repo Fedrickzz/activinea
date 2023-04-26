@@ -1,0 +1,11 @@
+@use 'base/mixins' as m;
+
+.auth {
+    @include m.contenidor-sm;
+}
+
+.auth__heading {
+}
+
+.auth__text {
+}

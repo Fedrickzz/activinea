@@ -46,3 +46,13 @@
     gap: $espaciat;
     grid-template-columns: repeat($columnes, 1fr);
 }
+
+@mixin contenidor {
+    width: min(95%, 120rem);
+    margin: 0 auto;
+}
+
+@mixin contenidor-sm {
+    width: min(95%, 60);
+    margin: 0 auto;
+}

@@ -1,6 +1,6 @@
 <main class="auth">
     <h2 class="auth__heading"><?php echo $titol; ?></h2>
-    <p class="auth__texto">Introduix les teves dades personals</p> 
+    <p class="auth__text">Introduix les teves dades personals</p> 
 
     <?php 
         require_once __DIR__ . '/../templates/alertes.php';
