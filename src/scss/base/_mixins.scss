@@ -2,57 +2,69 @@
 
 /** Media Queries **/
 @mixin telefon {
-    @media (min-width: v.$telefon) {
-        @content;
-    }
+  @media (min-width: v.$telefon) {
+    @content;
+  }
 }
 @mixin tablet {
-    @media (min-width: v.$tablet) {
-        @content;
-    }
+  @media (min-width: v.$tablet) {
+    @content;
+  }
 }
 @mixin desktop {
-    @media (min-width: v.$desktop) {
-        @content;
-    }
+  @media (min-width: v.$desktop) {
+    @content;
+  }
 }
 @mixin xl_desktop {
-    @media (min-width: v.$xl_desktop) {
-        @content;
-    }
+  @media (min-width: v.$xl_desktop) {
+    @content;
+  }
 }
 
 @mixin button($bgColor, $colorText) {
-    background-color: $bgColor;
-    padding: 1.5rem 4rem;
-    color: $colorText;
-    font-size: 1.8rem;
-    font-weight: 700;
-    border: none;
-    transition-property: background-color;
-    transition-duration: .3s;
-    text-align: center;
-    width: 100%;
-    display: inline-block;
+  background-color: $bgColor;
+  padding: 1.5rem 4rem;
+  color: $colorText;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
 
-    &:hover {
-        background-color: darken( $bgColor, 10% );
-        cursor: pointer;
-    }
+  &:hover {
+    background-color: darken($bgColor, 10%);
+    cursor: pointer;
+  }
 }
 
-@mixin grid($columnes, $espaciat ) {
-    display: grid;
-    gap: $espaciat;
-    grid-template-columns: repeat($columnes, 1fr);
+@mixin grid($columnes, $espaciat) {
+  display: grid;
+  gap: $espaciat;
+  grid-template-columns: repeat($columnes, 1fr);
 }
 
 @mixin contenidor {
-    width: min(95%, 120rem);
-    margin: 0 auto;
+  width: min(95%, 120rem);
+  margin: 0 auto;
 }
 
 @mixin contenidor-sm {
-    width: min(95%, 60);
-    margin: 0 auto;
+  width: min(95%, 60rem);
+  margin: 0 auto;
+}
+
+@mixin headings {
+  font-family: v.$font-principal;
+  font-weight: v.$black;
+  margin: 2rem 0;
+}
+
+@mixin numero-pagina {
+  @include headings;
+  margin: 6rem 0 3rem 0;
+  text-align: center;
 }
