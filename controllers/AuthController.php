@@ -105,7 +105,7 @@ class AuthController {
 
         // Render a la vista
         $router->render('auth/registre', [
-            'titol' => 'Crea la teva compte a Activinea',
+            'titol' => 'Crea la teva compte',
             'usuari' => $usuari, 
             'alertes' => $alertes
         ]);
