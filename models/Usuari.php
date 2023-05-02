@@ -3,8 +3,8 @@
 namespace Model;
 
 class Usuari extends ActiveRecord {
-    protected static $taula = 'usuaris';
-    protected static $columnasDB = ['id', 'nom', 'cognom', 'email', 'pais', 'ciutat', 'telf', 'password', 'confirmacio', 'token', 'admin'];
+    protected static $taula = 'Usuaris';
+    protected static $columnesDB = ['id', 'nom', 'cognom', 'email', 'pais', 'ciutat', 'telf', 'password', 'confirmacio', 'token', 'admin'];
     
     public function __construct($args = []) {
         $this->id = $args['id'] ?? null;
@@ -15,9 +15,10 @@ class Usuari extends ActiveRecord {
         $this->ciutat = $args['ciutat'] ?? '';
         $this->telf = $args['telf'] ?? '';
         $this->password = $args['password'] ?? '';
-        $this->confirmat = $args['confirmacio'] ?? 0;
+        $this->password2 = $args['password2'] ?? '';
+        $this->confirmacio = $args['confirmacio'] ?? 0;
         $this->token = $args['token'] ?? '';
-        $this->admin = $args['admin'] ?? '';
+        $this->admin = $args['admin'] ?? 0;
     }
 
     // Validar el Login dels Usuaris

@@ -10,6 +10,7 @@ class AuthController {
     public static function home(Router $router) {
       echo 'Des de home';  
     }
+
     public static function login(Router $router) {
 
         $alertes = [];
@@ -73,14 +74,17 @@ class AuthController {
             $alertes = $usuari->validar_compte();
 
             if(empty($alertes)) {
-                $existeUsuari = Usuari::where('email', $usuari->email);
+                $existeixUsuari = Usuari::where('email', $usuari->email);
+                
 
-                if($existeUsuari) {
+                if($existeixUsuari) {
                     Usuari::setAlerta('error', "L'usuari ja està registrat");
                     $alertes = Usuari::getAlertes();
-                } else {
+                } else if ($existeixUsuari == NULL) {
+
                     // Generar hash del password
                     $usuari->hashPassword();
+
 
                     // Eliminar password2
                     unset($usuari->password2);
@@ -89,13 +93,12 @@ class AuthController {
                     $usuari->crearToken();
 
                     // Crear un nou usuari
-                    $resultat =  $usuari->guardar();
+                    $resultat = $usuari->guardar();
 
                     // Enviar email
                     $email = new Email($usuari->email, $usuari->nom, $usuari->token);
                     $email->enviarConfirmacio();
                     
-
                     if($resultat) {
                         header('Location: /missatge');
                     }
@@ -229,18 +232,18 @@ class AuthController {
             Usuari::setAlerta('error', 'Token No Vàlid');
         } else {
             // Confirmar la compte
-            $usuari->confirmat = 1;
+            $usuari->confirmacio = 1;
             $usuari->token = '';
             unset($usuari->password2);
             
             // Guardar en la BD
             $usuari->guardar();
 
-            Usuari::setAlerta('exit', 'Cuenta Comprobada Correctament');
+            Usuari::setAlerta('success', 'Compte Comprovada Correctament');
         }
 
         $router->render('auth/confirmar', [
-            'titol' => 'Confirmar la compte Activinea',
+            'titol' => 'Confirmar el compte',
             'alertes' => Usuari::getAlertes()
         ]);
     }

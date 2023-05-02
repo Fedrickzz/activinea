@@ -2,10 +2,10 @@
 namespace Model;
 class ActiveRecord {
 
-    // Base DE dades
+    // Base de dades
     protected static $db;
     protected static $taula = '';
-    protected static $columnasDB = [];
+    protected static $columnesDB = [];
 
     // Alertes i missatges
     protected static $alertes = [];
@@ -16,8 +16,8 @@ class ActiveRecord {
     }
 
     // Definir un tipus d'alerta
-    public static function setAlerta($tipo, $missatge) {
-        static::$alertes[$tipo][] = $missatge;
+    public static function setAlerta($tipu, $missatge) {
+        static::$alertes[$tipu][] = $missatge;
     }
 
     // Obtenir les alertes
@@ -33,13 +33,14 @@ class ActiveRecord {
 
     // Consulta SQL per crear un objecte en memòria
     public static function consultarSQL($query) {
+
         // Consultar la base de dades
         $resultat = self::$db->query($query);
 
         // Iterar els resultats
         $array = [];
         while($registre = $resultat->fetch_assoc()) {
-            $array[] = static::crearObjete($registre);
+            $array[] = static::crearObjecte($registre);
         }
 
         // Alliberar la memòria
@@ -49,29 +50,30 @@ class ActiveRecord {
         return $array;
     }
 
-    // Crea l'objeto en memòria que es igual al de la BD
-    protected static function crearObjete($registre) {
-        $objeto = new static;
+    // Crea l'objecte en memòria que es igual al de la BD
+    protected static function crearObjecte($registre) {
+        $objecte = new static;
 
         foreach($registre as $key => $value ) {
-            if(property_exists( $objeto, $key  )) {
-                $objeto->$key = $value;
+            if(property_exists( $objecte, $key  )) {
+                $objecte->$key = $value;
             }
         }
-        return $objeto;
+        return $objecte;
     }
 
     // Identificar i unir els atributs de la BD
     public function atributs() {
         $atributs = [];
-        foreach(static::$columnasDB as $columna) {
-            if($columna === 'id') continue;
+        foreach(static::$columnesDB as $columna) {
+            if ($columna === 'id') continue;
             $atributs[$columna] = $this->$columna;
         }
+
         return $atributs;
     }
 
-    // Sanitizar les dades abans de guardar-les en la BD
+    // Sanititzar les dades abans de guardar-les en la BD
     public function sanititzarAtributs() {
         $atributs = $this->atributs();
         $sanititzat = [];
@@ -93,13 +95,17 @@ class ActiveRecord {
     // registres - CRUD
     public function guardar() {
         $resultat = '';
+
         if(!is_null($this->id)) {
             // actualitzar
-            $resultat = $this->actualizar();
+            $resultat = $this->actualitzar();
+
         } else {
             // Crear un nou registre
             $resultat = $this->crear();
         }
+
+
         return $resultat;
     }
 
@@ -118,8 +124,8 @@ class ActiveRecord {
     }
 
     // Obtenir registres amb certa quantitat
-    public static function get($limite) {
-        $query = "SELECT * FROM " . static::$taula . " LIMIT ${limite} ORDER BY id DESC" ;
+    public static function get($limit) {
+        $query = "SELECT * FROM " . static::$taula . " LIMIT ${limit} ORDER BY id DESC" ;
         $resultat = self::consultarSQL($query);
         return array_shift( $resultat ) ;
     }
@@ -128,6 +134,7 @@ class ActiveRecord {
     public static function where($columna, $valor) {
         $query = "SELECT * FROM " . static::$taula . " WHERE ${columna} = '${valor}'";
         $resultat = self::consultarSQL($query);
+
         return array_shift( $resultat ) ;
     }
 
@@ -137,16 +144,15 @@ class ActiveRecord {
         $atributs = $this->sanititzarAtributs();
 
         // Insertar en la base de dades
-        $query = " INSERT INTO " . static::$taula . " ( ";
+        $query = "INSERT INTO " . static::$taula . " (";
         $query .= join(', ', array_keys($atributs));
-        $query .= " ) VALUES (' "; 
+        $query .= ") VALUES ('"; 
         $query .= join("', '", array_values($atributs));
-        $query .= " ') ";
-
-        // debug($query); // Descomentar si no funciona
+        $query .= "')";
 
         // Resultat de la consulta
         $resultat = self::$db->query($query);
+
         return [
            'resultat' =>  $resultat,
            'id' => self::$db->insert_id
