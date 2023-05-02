@@ -4,17 +4,18 @@ namespace Model;
 
 class Usuari extends ActiveRecord {
     protected static $taula = 'usuaris';
-    protected static $columnasDB = ['id', 'nom', 'cognom', 'email', 'password', 'confirmat', 'token', 'admin'];
+    protected static $columnasDB = ['id', 'nom', 'cognom', 'email', 'pais', 'ciutat', 'telf', 'password', 'confirmacio', 'token', 'admin'];
     
-    public function __construct($args = [])
-    {
+    public function __construct($args = []) {
         $this->id = $args['id'] ?? null;
         $this->nom = $args['nom'] ?? '';
         $this->cognom = $args['cognom'] ?? '';
         $this->email = $args['email'] ?? '';
+        $this->pais = $args['pais'] ?? '';
+        $this->ciutat = $args['ciutat'] ?? '';
+        $this->telf = $args['telf'] ?? '';
         $this->password = $args['password'] ?? '';
-        $this->password2 = $args['password2'] ?? '';
-        $this->confirmat = $args['confirmat'] ?? 0;
+        $this->confirmat = $args['confirmacio'] ?? 0;
         $this->token = $args['token'] ?? '';
         $this->admin = $args['admin'] ?? '';
     }
@@ -35,7 +36,7 @@ class Usuari extends ActiveRecord {
     }
 
     // Validació per comptes noves
-    public function validar_cuenta() {
+    public function validar_compte() {
         if(!$this->nom) {
             self::$alertes['error'][] = 'El nom es Obligatori';
         }
