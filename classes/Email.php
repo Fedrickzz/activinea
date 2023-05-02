@@ -69,7 +69,7 @@ class Email {
 
         $contingut = '<html>';
         $contingut .= "<p><strong>Hola " . $this->nom .  "</strong> Has solicitat reestablir la teva contrasenya, seguiex el següent enllaç.</p>";
-        $contingut .= "<p>Prem aquí: <a href='" . $_ENV['HOST'] . "/recuperar?token=" . $this->token . "'>Reestablir Contrasenya</a>";        
+        $contingut .= "<p>Prem aquí: <a href='" . $_ENV['HOST'] . "/reestablir?token=" . $this->token . "'>Reestablir Contrasenya</a>";        
         $contingut .= "<p>Si tu no sol·licitat aquest canvi, pots ignorar el missatge</p>";
         $contingut .= '</html>';
         $mail->Body = $contingut;

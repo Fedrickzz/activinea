@@ -125,13 +125,13 @@ class AuthController {
                 // Buscar el usuari
                 $usuari = Usuari::where('email', $usuari->email);
 
-                if($usuari && $usuari->confirmat) {
+                if($usuari && $usuari->confirmacio) {
 
                     // Generar un nou token
                     $usuari->crearToken();
                     unset($usuari->password2);
 
-                    // Actualizar l'usuari
+                    // Actualitzar l'usuari
                     $usuari->guardar();
 
                     // Enviar el email
@@ -142,7 +142,7 @@ class AuthController {
                     // Imprimir la alerta
                     // Usuari::setAlerta('exit', 'Hemos enviado las instrucciones a tu email');
 
-                    $alertes['exit'][] = 'Hem enviat les instruccions al teu email';
+                    $alertes['succes'][] = 'Hem enviat les instruccions al teu email';
                 } else {
                  
                     // Usuari::setAlerta('error', 'El Usuari no existe o no esta confirmat');
@@ -163,7 +163,7 @@ class AuthController {
 
         $token = s($_GET['token']);
 
-        $token_valido = true;
+        $token_valid = true;
 
         if(!$token) header('Location: /');
 
@@ -172,14 +172,14 @@ class AuthController {
 
         if(empty($usuari)) {
             Usuari::setAlerta('error', 'Token No Vàlid, intenta de nou');
-            $token_valido = false;
+            $token_valid = false;
         }
 
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Afegir la nova contrasenya
-            $usuari->sincronizar($_POST);
+            $usuari->sincronitzar($_POST);
 
             // Validar contrasenya
             $alertes = $usuari->validarPassword();
