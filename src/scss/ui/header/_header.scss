@@ -3,9 +3,14 @@
 
 .header {
   min-height: 60rem;
-  background-image: url(../img/grafic.svg), url(../img/grafic.svg),
-    linear-gradient(to right, rgba(v.$negre, 1), rgba(v.$negre, 0.5)),
-    url(../img/header.jpg);
+  background-image: 
+    url(../img/grafic.svg), url(../img/grafic.svg),
+    linear-gradient(270deg, rgba(126,2,195,0.5) 0%, rgba(255,0,110,0.3) 100%),
+    // linear-gradient(to right, rgba(v.$negre, 1), rgba(v.$negre, 0.5)),
+    url(../img/header.png);
+
+
+  // background-image: linear-gradient(to right, rgba(v.$negre, 1), rgba(v.$negre, 0.5)), url(../img/header.png);
 
   background-repeat: no-repeat;
   background-size: 400px, 400px, cover, cover;
@@ -32,7 +37,7 @@
     font-weight: v.$bold;
 
     &:hover {
-      color: v.$blau;
+      color: v.$rosa;
     }
   }
 
@@ -45,13 +50,16 @@
 
   &__logo {
     @include m.text-fluid(2rem, 8rem);
-    @include m.text-gradient(v.$blau, v.$secundari);
+    // @include m.text-gradient(v.$rosa, v.$secundari);
+    color: v.$blanc;
     text-align: center;
     @include m.tablet {
       text-align: left;
       display: inline-block;
     }
   }
+
+  
   &__text {
     font-size: 3rem;
     font-weight: v.$bold;
@@ -77,3 +85,4 @@
     }
   }
 }
+

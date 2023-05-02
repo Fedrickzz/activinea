@@ -11,17 +11,22 @@
 
 
     &__link {
-        color: v.$blanc;
+        color: v.$negre;
         font-size: 2rem;
         padding: 2rem;
-        font-weight: v.$negre;
+        font-weight: v.$regular;
         text-transform: uppercase;
         text-align: center;
         
         &--actual,
         &:hover {
-            background-color: v.$blanc;
-            color: v.$blau;
+            background-color: v.$rosa;
+            color: v.$blanc;
         }
+
     }
+}
+
+.session {
+    font-weight: v.$black;
 }

@@ -2,7 +2,7 @@
 @use 'base/mixins' as m;
 
 .barra {
-    background-color: v.$blau;
+    background-color: v.$blanc;
     &__contingut {
         @include m.contenidor;
         display: flex;
@@ -15,8 +15,20 @@
         }
     }
 
-    &__logo {
-        @include m.logo;
-        @include m.text-fluid(1rem, 3rem);
-    }
+    // &__logo {
+    //     @include m.logo;
+    //     @include m.text-fluid(1rem, 3rem);
+    // }
+
 }
+
+.nav-logo {
+    width: 120px;
+    height: auto;
+    color: v.$negre;
+    text-align: center;
+    @include m.tablet {
+        margin: 0;
+    }
+    padding: 0.5rem;
+  } 

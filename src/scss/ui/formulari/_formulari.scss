@@ -25,7 +25,7 @@
     }
 
     &__submit {
-        @include m.button(v.$blau, v.$blanc);
+        @include m.button(v.$rosa, v.$blanc);
         width: auto;
         align-self: flex-start;
     }
