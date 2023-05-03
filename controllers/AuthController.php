@@ -196,7 +196,7 @@ class AuthController {
 
                 // Redireccionar
                 if($resultat) {
-                    header('Location: /');
+                    header('Location: /login');
                 }
             }
         }
