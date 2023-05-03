@@ -24,19 +24,26 @@ class AuthController {
             if(empty($alertes)) {
                 // Verificar que l'usuari existeix
                 $usuari = Usuari::where('email', $usuari->email);
-                if(!$usuari || !$usuari->confirmat ) {
-                    Usuari::setAlerta('error', "L'suari No Existeix o no esta confirmat");
+                if(!$usuari || !$usuari->confirmacio ) {
+                    Usuari::setAlerta('error', "L'usuari No Existeix o no esta confirmat");
                 } else {
                     // L'Usuari existeix
-                    if( password_verify($_POST['password'], $usuari->password) ) {
+                    if (password_verify($_POST['password'], $usuari->password)) {
                         
-                        // Iniciar la sesión
+                        // Iniciar la sessió
                         session_start();    
                         $_SESSION['id'] = $usuari->id;
                         $_SESSION['nom'] = $usuari->nom;
                         $_SESSION['cognom'] = $usuari->cognom;
                         $_SESSION['email'] = $usuari->email;
                         $_SESSION['admin'] = $usuari->admin ?? null;
+
+                        // Redirecció
+                        if ($usuari->admin){
+                            header('Location: /admin/dashboard');
+                        } else {
+                            header('Location: /finalitzar-registre');
+                        }
                         
                     } else {
                         Usuari::setAlerta('error', 'Contrasenya Incorrecta');
@@ -142,7 +149,7 @@ class AuthController {
                     // Imprimir la alerta
                     // Usuari::setAlerta('exit', 'Hemos enviado las instrucciones a tu email');
 
-                    $alertes['succes'][] = 'Hem enviat les instruccions al teu email';
+                    $alertes['success'][] = 'Hem enviat les instruccions al teu email';
                 } else {
                  
                     // Usuari::setAlerta('error', 'El Usuari no existe o no esta confirmat');
