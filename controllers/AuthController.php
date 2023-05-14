@@ -7,9 +7,6 @@ use Model\Usuari;
 use MVC\Router;
 
 class AuthController {
-    public static function home(Router $router) {
-      echo 'Des de home';  
-    }
 
     public static function login(Router $router) {
 
@@ -38,7 +35,7 @@ class AuthController {
                         $_SESSION['email'] = $usuari->email;
                         $_SESSION['admin'] = $usuari->admin ?? null;
 
-                        // Redirecció
+                        // Redireccióif ()
                         if ($usuari->admin){
                             header('Location: /admin/dashboard');
                         } else {
@@ -92,7 +89,6 @@ class AuthController {
                     // Generar hash del password
                     $usuari->hashPassword();
 
-
                     // Eliminar password2
                     unset($usuari->password2);
 
@@ -115,7 +111,7 @@ class AuthController {
 
         // Render a la vista
         $router->render('auth/registre', [
-            'titol' => 'Crea la teva compte',
+            'titol' => 'Crea el teu compte',
             'usuari' => $usuari, 
             'alertes' => $alertes
         ]);
@@ -238,7 +234,7 @@ class AuthController {
             // No s'ha trobat cap usuari amb aquest token
             Usuari::setAlerta('error', 'Token No Vàlid');
         } else {
-            // Confirmar la compte
+            // Confirmar el compte
             $usuari->confirmacio = 1;
             $usuari->token = '';
             unset($usuari->password2);
@@ -246,7 +242,7 @@ class AuthController {
             // Guardar en la BD
             $usuari->guardar();
 
-            Usuari::setAlerta('success', 'Compte Comprovada Correctament');
+            Usuari::setAlerta('success', 'Compte Confirmat Correctament');
         }
 
         $router->render('auth/confirmar', [

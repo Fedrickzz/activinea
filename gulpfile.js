@@ -19,30 +19,45 @@ const terser = require('gulp-terser-js');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 
+// Webpack
+const webpack = require('webpack-stream')
+
+
 const paths = {
   scss: 'src/scss/**/*.scss',
   js: 'src/js/**/*.js',
   images: 'src/img/**/*',
 };
 function css() {
-  return (
-    src(paths.scss)
-      .pipe(sourcemaps.init())
-      .pipe(sass({ outputStyle: 'expanded' }))
-      // .pipe(postcss([autoprefixer()]))
-      .pipe(postcss([autoprefixer(), cssnano()]))
-      .pipe(sourcemaps.write('.'))
-      .pipe(dest('public/build/css'))
-  );
+  return src(paths.scss)
+      .pipe( sourcemaps.init())
+      .pipe( sass({outputStyle: 'expanded'}))
+      .pipe( postcss([autoprefixer()]))
+      // .pipe( postcss([autoprefixer(), cssnano()]))
+      .pipe( sourcemaps.write('.'))
+      .pipe(  dest('public/build/css') );
 }
 function javascript() {
   return src(paths.js)
-    .pipe(sourcemaps.init())
-    .pipe(concat('bundle.js'))
-    .pipe(terser())
-    .pipe(sourcemaps.write('.'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(dest('./public/build/js'));
+      .pipe( webpack({
+          module: {
+              rules: [
+                  {
+                      test: /\.css$/i,
+                      use: ['style-loader', 'css-loader']
+                  }
+              ]
+          },
+          mode: 'production',
+          watch: true,
+          entry: './src/js/app.js'
+      }))
+      .pipe(sourcemaps.init())
+      // .pipe(concat('bundle.js')) 
+      .pipe(terser())
+      .pipe(sourcemaps.write('.'))
+      .pipe(rename({ suffix: '.min' }))
+      .pipe(dest('./public/build/js'))
 }
 
 function images() {

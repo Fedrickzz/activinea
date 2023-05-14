@@ -23,7 +23,7 @@
 
 
     <div class="accions">
-        <a href="/login" class="accions__link">Ja tens una compta? Inicia sessió</a>
-        <a href="/registre" class="accions__link">Encara no tens una compta? Crea una</a>
+        <a href="/login" class="accions__link">Ja tens un compte? Inicia sessió</a>
+        <a href="/registre" class="accions__link">Encara no tens un compte? Crea un</a>
     </div>
 </main>

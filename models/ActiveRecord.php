@@ -130,13 +130,73 @@ class ActiveRecord {
         return array_shift( $resultat ) ;
     }
 
-    // Buscar Where amb Columna 
+    // Paginar els registres
+    public static function paginar($per_pagina, $offset) {
+        $query = "SELECT * FROM " . static::$taula . " ORDER BY id DESC LIMIT ${per_pagina} OFFSET ${offset} " ;
+        $resultat = self::consultarSQL($query);
+        return $resultat;
+    }
+
+    // Búsqueda Where amb Columna 
     public static function where($columna, $valor) {
         $query = "SELECT * FROM " . static::$taula . " WHERE ${columna} = '${valor}'";
         $resultat = self::consultarSQL($query);
-
         return array_shift( $resultat ) ;
     }
+
+    // Retornar els registres ordenats
+    public static function ordenar($columna, $ordre) {
+        $query = "SELECT * FROM " . static::$taula . " ORDER BY ${columna} ${ordre} "; 
+        $resultat = self::consultarSQL($query);
+        return $resultat;
+    }
+    // Retornar amb ordre i limit
+    public static function ordenarLimit($columna, $ordre, $limit) {
+        $query = "SELECT * FROM " . static::$taula . " ORDER BY ${columna} ${ordre} LIMIT ${limit} "; 
+        $resultat = self::consultarSQL($query);
+        return $resultat;
+    }
+
+    // Búsqueda Where amb Múltiples opcions
+    public static function whereArray($array = []) {
+        $query = "SELECT * FROM " . static::$taula . " WHERE ";
+        foreach($array as $key => $value) {
+            if($key == array_key_last($array)) {
+                $query .= " ${key} = '${value}'";
+            } else {
+                $query .= " ${key} = '${value}' AND ";
+            }
+        }
+        $resultat = self::consultarSQL($query);
+        return $resultat;
+    }
+
+    // Tornar un total dels registres
+    public static function total($columna = '', $valor = '') {
+        $query = "SELECT COUNT(*) FROM " . static::$taula;
+        if($columna) {
+            $query .= " WHERE ${columna} = ${valor}";
+        }
+        $resultat = self::$db->query($query);
+        $total = $resultat->fetch_array();
+
+        return array_shift($total);
+    }
+
+    // Total de Registres amb un Array Where
+    public static function totalArray($array = []) {
+        $query = "SELECT COUNT(*) FROM " . static::$taula . " WHERE ";
+        foreach($array as $key => $value) {
+            if($key == array_key_last($array)) {
+                $query .= " ${key} = '${value}' ";
+            } else {
+                $query .= " ${key} = '${value}' AND ";
+            }
+        }
+        $resultat = self::$db->query($query);
+        $total = $resultat->fetch_array();
+        return array_shift($total);
+    }   
 
     // Creau un nou registre
     public function crear() {

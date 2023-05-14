@@ -18,7 +18,7 @@ class Usuari extends ActiveRecord {
         $this->password2 = $args['password2'] ?? '';
         $this->confirmacio = $args['confirmacio'] ?? 0;
         $this->token = $args['token'] ?? '';
-        $this->admin = $args['admin'] ?? 0;
+        $this->admin = $args['admin'] ?? 3;
     }
 
     // Validar el Login dels Usuaris
@@ -36,7 +36,7 @@ class Usuari extends ActiveRecord {
 
     }
 
-    // Validació per comptes noves
+    // Validació per comptes nous
     public function validar_compte() {
         if(!$this->nom) {
             self::$alertes['error'][] = 'El nom es Obligatori';

@@ -69,7 +69,7 @@
     </form>
 
     <div class="accions">
-        <a href="/login" class="accions__link">Ja tens una compta? Inicia sessió</a>
+        <a href="/login" class="accions__link">Ja tens un compte? Inicia sessió</a>
         <a href="/oblidada" class="accions__link">Has oblidat la teva contrasenya?</a>
     </div>
 </main>

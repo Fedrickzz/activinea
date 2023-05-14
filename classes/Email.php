@@ -30,7 +30,7 @@ class Email {
      
          $mail->setFrom('compte@activinea.com');
          $mail->addAddress($this->email, $this->nom);
-         $mail->Subject = 'Confirma la compta';
+         $mail->Subject = 'Confirma el compte';
 
          // Set HTML
          $mail->isHTML(TRUE);
@@ -39,7 +39,7 @@ class Email {
          $contingut = '<html>';
          $contingut .= "<p><strong>Hola " . $this->nom .  "</strong> Has Registrat Correctament la teva compte en Activinea; però és necessari confirmar-la</p>";
          $contingut .= "<p>Prem aquí: <a href='" . $_ENV['HOST'] . "/confirmar-compte?token=" . $this->token . "'>Confirmar Compte</a>";       
-         $contingut .= "<p>Si tu no has creat aquesta compta; pots ignorar el missatge</p>";
+         $contingut .= "<p>Si tu no has creat aquest compte; pots ignorar el missatge</p>";
          $contingut .= '</html>';
          $mail->Body = $contingut;
 

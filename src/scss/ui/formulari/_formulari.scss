@@ -5,11 +5,40 @@
     display: flex;
     flex-direction: column;
 
+    &__fieldset {
+        border: none;
+        margin-top: 1rem;
+        padding: 0;
+    }
+    &__legend {
+        color: v.$gris;
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
     &__camp {
         display: flex;
         flex-direction: column;
         gap: 1rem;
         margin: 1.5rem 0;
+    }
+
+    &__contenidor-icon {
+        display: flex;
+        border-radius: .5rem;
+        overflow: hidden;
+    }
+    &__icon {
+        background-color: v.$gris-fosc;
+        width: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            color: v.$blanc;
+            font-size: 2rem;
+        }
     }
 
     &__label {
@@ -18,16 +47,48 @@
         color: rgba(v.$negre, .8);
     }
 
-    &__input {
+    &__input,
+    &__select {
         padding: 1rem;
         border: 1px solid darken(v.$gris-clar, 20);
         border-radius: .5rem;
+
+        &--file {
+            border: none;
+        }
+        &--social {
+            @extend .formulari__input;
+            flex: 1;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+
+    &__radio{
+        display: flex;
+        gap: 2rem;
+    }
+
+    &__text {
+        margin-top: 3rem;
+    }
+    &__imatge {
+        max-width: 20rem;
+    }
+
+    &__llistat {
+        @include m.tags;
     }
 
     &__submit {
         @include m.button(v.$rosa, v.$blanc);
         width: auto;
         align-self: flex-start;
+
+        &--registrar,
+        &--full {
+            width: 100%;
+        }
     }
 
 

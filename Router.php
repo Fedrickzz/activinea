@@ -29,10 +29,10 @@ class Router
             $fn = $this->postRoutes[$url_actual] ?? null;
         }
 
-        if ( $fn ) {
+        if ($fn) {
             call_user_func($fn, $this);
         } else {
-            echo "Pàgina No Trobada o Ruta no vàlida";
+            header('Location: /404');
         }
     }
 

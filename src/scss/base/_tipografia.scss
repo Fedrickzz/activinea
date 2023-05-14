@@ -21,3 +21,7 @@ h3 {
 [class$="__heading"] {
     @include m.numero-pagina;
 }
+
+[class$="__descripcio"] {
+    @include m.descripcio-pagina;
+}

@@ -6,6 +6,7 @@
     justify-content: space-between;
 
     &--centrar {
+        @extend .accions;
         justify-content: center;
     }
 
