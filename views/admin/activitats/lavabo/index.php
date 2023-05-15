@@ -1,8 +1,11 @@
 
 <div id="main-casa">
-    <img class="primary" src="/img/activitats/lavabo.png">
-    <div title="TORNAR ENRERE" id="porta-lavabo" class="effect-porta-lavabo" onclick="location.href='/admin/activitats'"></div>
-    <div title="PICA" id="pica-lavabo" class="effect-pica-lavabo"></div>
+    <img src="/img/activitats/lavabo.png" usemap="#image-map">
+
+    <map name="image-map">
+        <area target="_self" alt="PICA" title="PICA" href="/admin/activitats" coords="685,255,987,923" shape="rect">
+        <area target="_self" alt="TORNAR ENRERE" title="TORNAR ENRERE" href="/admin/activitats" coords="1635,143,1862,1043" shape="rect">
+    </map>
 </div>
 
 

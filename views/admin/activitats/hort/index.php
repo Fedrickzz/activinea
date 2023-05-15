@@ -1,9 +1,37 @@
 
+
 <div id="main-casa">
-<img class="primary" src="/img/activitats/hort.png">
-    <div title="TORNAR ENRERE" id="porta-hort" class="effect-porta-hort" onclick="location.href='/admin/activitats'"></div>
-    <div title="HORT" id="caixa-hort" class="effect-caixa-hort"></div>
+    <img src="/img/activitats/hort.png" usemap="#image-map">
+
+
+    <map name="image-map">
+        <area target="_self" alt="TORNAR ENRERE" title="TORNAR ENRERE" href="/admin/activitats" coords="0,-1,324,692" shape="rect">
+        <area target="_self" alt="HORT" title="JOC HORT" coords="602,330,1808,853" shape="rect">
+    </map>
 </div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script>
+
+    $(document).ready(function (e) {
+    //   $('img[usemap]').rwdImageMaps();
+
+    //   $('area').on('click', function () {
+    //     // alert($(this).attr('alt') + );
+    //     console.log($(this)[0].coords);
+    //   });
+    });
+
+    $(document).ready(function(){
+        $('.toast__close').click(function(e){
+            e.preventDefault();
+            var parent = $(this).parent('.toast');
+            parent.fadeOut("slow", function() { $(this).remove(); } );
+        });
+    });
+  </script>
 
 
 

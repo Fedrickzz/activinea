@@ -11,6 +11,7 @@ class OpcionsController {
         if(!is_admin()) {
             header('Location: /login');
         }
+
         $alertes = [];
         // Validar el ID
         $id = $_SESSION['id'];
@@ -20,7 +21,7 @@ class OpcionsController {
             header('Location: /admin/opcions');
         }
 
-        // Obtener usuari a Editar
+        // Obtenir usuari a Editar
         $usuari = usuari::find($id);
 
         if(!$usuari) {
@@ -72,7 +73,7 @@ class OpcionsController {
         }
 
         $router->render('admin/opcions/index', [
-            'titol' => 'Actualitzar Usuari',
+            'titol' => 'El teu compte',
             'alertes' => $alertes,
             'usuari' => $usuari,
             'social' => json_decode($usuari->social)

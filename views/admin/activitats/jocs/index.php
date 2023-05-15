@@ -1,8 +1,11 @@
 
 <div id="main-casa">
-    <img class="primary" src="/img/activitats/sala-jocs.png">
-    <div title="TORNAR ENRERE" id="porta-sala-jocs" class="effect-porta-sala-jocs" onclick="location.href='/admin/activitats'"></div>
-    <div title="CAIXA DE JOGUINES" id="caixa-sala-jocs" class="effect-caixa-sala-jocs"></div>
+    <img src="/img/activitats/sala-jocs.png" usemap="#image-map">
+
+    <map name="image-map">
+        <area target="_self" alt="TORNAR ENRERE" title="TORNAR ENRERE" href="/admin/activitats" coords="170,216,512,859" shape="rect">
+        <area target="_self" alt="CAIXA DE JOGUINES" title="CAIXA DE JOGUINES" href="/admin/activitats" coords="641,766,918,1017" shape="rect">
+    </map>
 </div>
 
 

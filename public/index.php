@@ -53,8 +53,7 @@ $router->get('/admin/llibres/editar', [LLibresController::class, 'editar']);
 $router->post('/admin/llibres/editar', [LLibresController::class, 'editar']);
 $router->post('/admin/llibres/eliminar', [LLibresController::class, 'eliminar']);
 
-
-
+// Usuaris
 $router->get('/admin/registrats', [RegistratsController::class, 'index']);
 $router->get('/admin/registrats/crear', [RegistratsController::class, 'crear']);
 $router->post('/admin/registrats/crear', [RegistratsController::class, 'crear']);
@@ -63,6 +62,7 @@ $router->post('/admin/registrats/editar', [RegistratsController::class, 'editar'
 $router->post('/admin/registrats/eliminar', [RegistratsController::class, 'eliminar']);
 
 $router->get('/admin/opcions', [OpcionsController::class, 'index']);
+$router->post('/admin/opcions', [OpcionsController::class, 'index']);
 
 // Activitats
 $router->get('/admin/activitats', [ActivitatsController::class, 'index']);

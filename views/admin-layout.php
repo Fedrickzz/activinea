@@ -34,8 +34,75 @@
                 ?> 
             </main>
         </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    (function (a) {
+      a.fn.rwdImageMaps = function () {
+        var c = this;
+        var b = function () {
+          c.each(function () {
+            if (typeof a(this).attr('usemap') == 'undefined') {
+              return;
+            }
+            var e = this,
+              d = a(e);
+            a('<img />')
+              .on('load', function () {
+                var g = 'width',
+                  m = 'height',
+                  n = d.attr(g),
+                  j = d.attr(m);
+                if (!n || !j) {
+                  var o = new Image();
+                  o.src = d.attr('src');
+                  if (!n) {
+                    n = o.width;
+                  }
+                  if (!j) {
+                    j = o.height;
+                  }
+                }
+                var f = d.width() / 100,
+                  k = d.height() / 100,
+                  i = d.attr('usemap').replace('#', ''),
+                  l = 'coords';
+                a('map[name="' + i + '"]')
+                  .find('area')
+                  .each(function () {
+                    var r = a(this);
+                    if (!r.data(l)) {
+                      r.data(l, r.attr(l));
+                    }
+                    var q = r.data(l).split(','),
+                      p = new Array(q.length);
+                    for (var h = 0; h < p.length; ++h) {
+                      if (h % 2 === 0) {
+                        p[h] = parseInt((q[h] / n) * 100 * f);
+                      } else {
+                        p[h] = parseInt((q[h] / j) * 100 * k);
+                      }
+                    }
+                    r.attr(l, p.toString());
+                  });
+              })
+              .attr('src', d.attr('src'));
+          });
+        };
+        a(window).resize(b).trigger('resize');
+        return this;
+      };
+    })(jQuery);
+  </script>
+  <script>
+    $(document).ready(function (e) {
+      $('img[usemap]').rwdImageMaps();
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      // $('area').on('mouseover', function () {
+      //   // alert($(this).attr('alt') + );
+      //   console.log($(this)[0].coords);
+      // });
+    });
+  </script>
     <script src="/build/js/main.min.js" defer></script>
 </body>
 </html>

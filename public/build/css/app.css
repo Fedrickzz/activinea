@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i");
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -1751,253 +1751,118 @@ h3 {
 /* ************* CASA ******************* */
 #main-casa {
   position: relative;
-  display: inline-block;
   z-index: 0;
 }
-
-#room-habitacio {
-  width: 38.5rem;
-  height: 18rem;
-  top: -50.7rem;
-  left: 50.2rem;
+#main-casa img {
+  width: 100%;
+  height: auto;
 }
-
-#room-jocs {
-  width: 25.5rem;
-  height: 18rem;
-  top: -68.7rem;
-  left: 89.5rem;
-  z-index: 1;
-}
-
-#room-lavabo {
-  width: 28.2rem;
-  height: 19.5rem;
-  top: -67.7rem;
-  left: 21.1rem;
-  z-index: 1;
-}
-
-#room-sala {
-  width: 34.5rem;
-  height: 19.5rem;
-  top: -87.1rem;
-  left: 50.3rem;
-  z-index: 1;
-}
-
-#room-cuina {
-  width: 29rem;
-  height: 19.5rem;
-  top: -107.1rem;
-  left: 86rem;
-  z-index: 1;
-}
-
-#room-hort {
-  width: 43rem;
-  height: 19.5rem;
-  top: -127.1rem;
-  left: 116.3rem;
-  z-index: 1;
-}
-
-.effect {
-  position: relative;
-  z-index: 1;
+#main-casa map area {
   cursor: pointer;
 }
-.effect:hover {
-  border: 5px solid white;
-  background-color: rgba(255, 255, 255, 0.3);
-  filter: brightness(2);
+
+.toast__container {
+  display: table-cell;
+  vertical-align: middle;
 }
 
-/* ************* HABITACIÓ ******************* */
-#porta-habitacio {
+.toast__cell {
+  display: inline-block;
+}
+
+.add-margin {
+  margin-top: 20px;
+}
+
+.toast__svg {
+  fill: #fff;
+}
+
+.toast {
+  text-align: left;
+  padding: 21px 0;
+  background-color: #fff;
+  border-radius: 4px;
+  max-width: 500px;
+  top: 0px;
+  position: relative;
+  box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.2);
+}
+
+.toast:before {
+  content: "";
   position: absolute;
-  width: 16.4%;
-  height: 21.5%;
-  top: calc(14.7% - 45px);
-  left: 81%;
-  background-color: red;
-  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 
-#armari-habitacio {
-  width: 39.5rem;
-  height: 50rem;
-  top: -115.3rem;
-  left: 8.2rem;
+.toast__icon {
+  position: absolute;
+  top: 50%;
+  left: 22px;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  padding: 7px;
+  border-radius: 50%;
+  display: inline-block;
 }
 
-.effect-porta-habitacio {
-  position: relative;
-  z-index: 1;
+.toast__type {
+  color: #3e3e3e;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.toast__message {
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #878787;
+}
+
+.toast__content {
+  padding-left: 70px;
+  padding-right: 60px;
+}
+
+.toast__close {
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  width: 14px;
   cursor: pointer;
-}
-.effect-porta-habitacio:hover {
-  border: 5px solid white;
-  background-color: rgba(255, 255, 255, 0.3);
-  filter: brightness(2);
+  height: 14px;
+  fill: #878787;
+  transform: translateY(-50%);
 }
 
-.effect-armari {
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-}
-.effect-armari:hover {
-  border: 5px solid white;
-  background-color: rgba(255, 255, 255, 0.3);
-  filter: brightness(2);
+.toast--green .toast__icon {
+  background-color: #2BDE3F;
 }
 
-/* ************* SALA JOCS ******************* */
-#porta-sala-jocs {
-  width: 29.4rem;
-  height: 54rem;
-  top: -73.9rem;
-  left: 14.3rem;
+.toast--green:before {
+  background-color: #2BDE3F;
 }
 
-.effect-porta-sala-jocs {
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-}
-.effect-porta-sala-jocs:hover {
-  border: 5px solid white;
-  background-color: rgba(255, 255, 255, 0.3);
-  filter: brightness(2);
+.toast--blue .toast__icon {
+  background-color: #1D72F3;
 }
 
-#caixa-sala-jocs {
-  width: 24.4rem;
-  height: 22rem;
-  top: -80.9rem;
-  left: 54.3rem;
+.toast--blue:before {
+  background-color: #1D72F3;
 }
 
-.effect-caixa-sala-jocs {
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-}
-.effect-caixa-sala-jocs:hover {
-  border: 5px solid white;
-  background-color: rgba(255, 255, 255, 0.3);
-  filter: brightness(2);
+.toast--yellow .toast__icon {
+  background-color: #FFC007;
 }
 
-/* ************* HORT ******************* */
-#porta-hort {
-  width: 30rem;
-  height: 54rem;
-  top: -92.4rem;
-  left: 0rem;
-}
-
-.effect-porta-hort {
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-}
-.effect-porta-hort:hover {
-  border: 5px solid white;
-  background-color: rgba(255, 255, 255, 0.3);
-  filter: brightness(2);
-}
-
-#caixa-hort {
-  width: 101.3rem;
-  height: 43rem;
-  top: -116.9rem;
-  left: 54.3rem;
-}
-
-.effect-caixa-hort {
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-}
-.effect-caixa-hort:hover {
-  border: 5px solid white;
-  background-color: rgba(255, 255, 255, 0.3);
-  filter: brightness(2);
-}
-
-/* ************* LAVABO ******************* */
-#porta-lavabo {
-  width: 21rem;
-  height: 54rem;
-  top: -73.4rem;
-  left: 138rem;
-}
-
-.effect-porta-lavabo {
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-}
-.effect-porta-lavabo:hover {
-  border: 5px solid white;
-  background-color: rgba(255, 255, 255, 0.3);
-  filter: brightness(2);
-}
-
-#pica-lavabo {
-  width: 29.3rem;
-  height: 58rem;
-  top: -124.9rem;
-  left: 54.3rem;
-}
-
-.effect-pica-lavabo {
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-}
-.effect-pica-lavabo:hover {
-  border: 5px solid white;
-  background-color: rgba(255, 255, 255, 0.3);
-  filter: brightness(2);
-}
-
-/* ************* SALA ESTAR ******************* */
-#porta-sala-estar {
-  width: 21rem;
-  height: 54rem;
-  top: -73.4rem;
-  left: 138rem;
-}
-
-.effect-porta-sala-estar {
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-}
-.effect-porta-sala-estar:hover {
-  border: 5px solid white;
-  background-color: rgba(255, 255, 255, 0.3);
-  filter: brightness(2);
-}
-
-#rellotge-sala-estar {
-  width: 29.3rem;
-  height: 58rem;
-  top: -124.9rem;
-  left: 54.3rem;
-}
-
-.effect-rellotge-sala-estar {
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-}
-.effect-rellotge-sala-estar:hover {
-  border: 5px solid white;
-  background-color: rgba(255, 255, 255, 0.3);
-  filter: brightness(2);
+.toast--yellow:before {
+  background-color: #FFC007;
 }
 /*# sourceMappingURL=app.css.map */

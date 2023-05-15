@@ -1,9 +1,13 @@
 
 
 <div id="main-casa">
-    <img class="primary" src="/img/activitats/habitacio-1.png">
-    <div title="TORNAR ENRERE" id="porta-habitacio" class="effect-porta-habitacio" onclick="location.href='/admin/activitats'"></div>
-    <div title="ARMARI" id="armari-habitacio" class="effect-armari" onclick="location.href='/admin/activitats'"></div>
+<img src="/img/activitats/habitacio-1.png" usemap="#image-map">
+
+<map name="image-map">
+    <area target="_self" alt="TORNAR ENRERE" title="TORNAR ENRERE" href="/admin/activitats" coords="1557,244,1869,823" shape="rect">
+    <area target="_self" alt="ARMARI" title="ARMARI" href="/admin/activitats" coords="87,284,567,915" shape="rect">
+</map>
+
 </div>
 
 

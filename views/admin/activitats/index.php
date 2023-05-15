@@ -1,14 +1,14 @@
-
 <div id="main-casa">
-    <img class="primary" src="/img/activitats/bg_no_header.png">
-    <div title="HABITACIÓ" id="room-habitacio" class="effect" onclick="location.href='/admin/activitats/sala-habitacio'"></div>
-    <div title="SALA DE JOCS" id="room-jocs" class="effect" onclick="location.href='/admin/activitats/sala-jocs'"></div>
-    <div title="LAVABO" id="room-lavabo" class="effect" onclick="location.href='/admin/activitats/sala-lavabo'"></div>
-    <div title="SALA D'ESTAR" id="room-sala" class="effect" onclick="location.href='/admin/activitats/sala-sala_estar'"></div>
-    <div title="CUINA" id="room-cuina" class="effect" onclick="location.href='/admin/activitats/sala-cuina'"></div>
-    <div title="HORT" id="room-hort" class="effect" onclick="location.href='/admin/activitats/sala-hort'"></div>
+
+  <img src="/img/activitats/bg_no_header.png" usemap="#image-map">
+
+  <map name="image-map">
+    <area target="_self" alt="HABITACIÓ" title="HABITACIÓ" href="/admin/activitats/sala-habitacio" coords="590,491,1040,705" shape="rect">
+    <area target="_self" alt="SALA DE JOCS" title="SALA DE JOCS" href="/admin/activitats/sala-jocs" coords="1048,491,1350,698" shape="rect">
+    <area target="_self" alt="LAVABO" title="LAVABO" href="/admin/activitats/sala-lavabo" coords="248,769,577,713,577,942,244,942" shape="poly">
+    <area target="_self" alt="SALA D'ESTAR" title="SALA D'ESTAR" href="/admin/activitats/sala-sala_estar" coords="587,715,994,942" shape="rect">
+    <area target="_self" alt="CUINA" title="CUINA" href="/admin/activitats/sala-cuina" coords="1007,712,1350,939" shape="rect">
+    <area target="_self" alt="HORT" title="HORT" href="/admin/activitats/sala-hort" coords="1362,713,1862,932" shape="rect">
+  </map>
+
 </div>
-
-
-
-

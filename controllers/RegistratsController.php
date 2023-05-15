@@ -121,6 +121,7 @@ class RegistratsController {
         if ($_SESSION['admin'] != 1) {
             header('Location: /admin/dashboard');
         }
+
         $alertes = [];
         // Validar ID
         $id = $_GET['id'];
@@ -130,7 +131,7 @@ class RegistratsController {
             header('Location: /admin/registrats');
         }
 
-        // Obtener usuari a Editar
+        // Obtenir usuari a Editar
         $usuari = usuari::find($id);
 
         if(!$usuari) {
