@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .vid-content-vids {
+            position: relative;
+        }
+
+        .imatge {
+            width: 1080px;
+            height: auto;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        /* dia */
+        .cel {
+            z-index: 0;
+        }
+
+        .terra {
+            z-index: 1;
+        }
+
+        .llum {
+            z-index: 1;
+        }
+
+        #arbre-1,
+        #arbre-2,
+        #arbre-3,
+        #arbre-4,
+        #arbre-5,
+        #arbre-6 {
+            z-index: 1;
+            visibility: hidden;
+        }
+
+
+
+
+        /* tormenta */
+        .cel-fosc {
+            z-index: 0;
+        }
+
+        .pluja {
+            z-index: 1;
+        }
+
+        .terra {
+            z-index: 2;
+        }
+
+        .nuvols {
+            z-index: 3;
+        }
+
+        /* btn */
+        .btn-pluja-1,
+        .btn-pluja-2,
+        .btn-sol-1,
+        .btn-sol-2 {
+            z-index: 3;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="vid-content-vids">
+
+
+
+        <!-- dia -->
+        <!-- <img src="img/cel.png" class="imatge cel">
+        <img src="img/terra.png" class="imatge terra">
+        <img src="img/llum.png" class="imatge llum"> -->
+
+
+        <!-- nit -->
+        <img src="img/cel-fosc.png" class="imatge cel-fosc">
+        <img src="img/terra.png" class="imatge terra">
+        <img src="img/nuvols.png" class="imatge nuvols">
+        <img src="img/pluja.png" class="imatge pluja">
+
+
+        <!-- btn-click -->
+        <!-- <img src="img/btn-pluja-1.png" class="imatge btn-pluja btn-pluja-1" onclick="game()"> -->
+        <!-- <img src="img/btn-pluja-2.png" class="imatge btn-plula btn-pluja-2"> -->
+        <img src="img/btn-sol-1.png" class="imatge btn-sol btn-sol-1" onclick="sol()">
+        <!-- <img src="img/btn-sol-2.png" class="imatge btn-sol btn-sol-2"> -->
+
+
+        <!-- arbre -->
+        <img src="img/arbre-1.png" class="imatge" id="arbre-1">
+        <img src="img/arbre-2.png" class="imatge" id="arbre-2">
+        <img src="img/arbre-3.png" class="imatge" id="arbre-3">
+        <img src="img/arbre-4.png" class="imatge" id="arbre-4">
+        <img src="img/arbre-5.png" class="imatge" id="arbre-5">
+        <img src="img/arbre-6.png" class="imatge" id="arbre-6">
+
+    </div>
+
+    <script>
+        count = 0;
+        let step = 2;
+
+        let fase_0 = 0; // -1
+        let fase_1 = 1 * step;
+        let fase_2 = 2 * step;
+        let fase_3 = 3 * step;
+        let fase_4 = 4 * step;
+        let fase_5 = 5 * step;
+        let fase_6 = 6 * step;
+
+        function mostrarArbre() {
+            if (count <= fase_0) { // 0 -1
+                hideImage('arbre-1'); // mostrar
+                hideImage('arbre-2');
+                hideImage('arbre-3');
+                hideImage('arbre-4');
+                hideImage('arbre-5');
+                hideImage('arbre-6');
+
+            } else if (count > fase_0 && count <= fase_1) {
+                showImage('arbre-1'); // mostrar
+                hideImage('arbre-2');
+                hideImage('arbre-3');
+                hideImage('arbre-4');
+                hideImage('arbre-5');
+                hideImage('arbre-6');
+
+            } else if (count > fase_1 && count <= fase_2) {
+                hideImage('arbre-1');
+                showImage('arbre-2'); // mostrar
+                hideImage('arbre-3');
+                hideImage('arbre-4');
+                hideImage('arbre-5');
+                hideImage('arbre-6');
+
+            } else if (count > fase_2 && count <= fase_3) {
+                hideImage('arbre-1');
+                hideImage('arbre-2');
+                showImage('arbre-3'); // mostrar
+                hideImage('arbre-4');
+                hideImage('arbre-5');
+                hideImage('arbre-6');
+
+            } else if (count > fase_3 && count <= fase_4) {
+                hideImage('arbre-1');
+                hideImage('arbre-2');
+                hideImage('arbre-3');
+                showImage('arbre-4'); // mostrar
+                hideImage('arbre-5');
+                hideImage('arbre-6');
+
+            } else if (count > fase_4 && count <= fase_5) {
+                hideImage('arbre-1');
+                hideImage('arbre-2');
+                hideImage('arbre-3');
+                hideImage('arbre-4');
+                showImage('arbre-5'); // mostrar
+                hideImage('arbre-6');
+
+            } else if (count > fase_5 && count <= fase_6) {
+                hideImage('arbre-1');
+                hideImage('arbre-2');
+                hideImage('arbre-3');
+                hideImage('arbre-4');
+                hideImage('arbre-5');
+                showImage('arbre-6'); // mostrar
+
+            }
+        }
+
+        function yourFunction() {
+            // do whatever you like here
+
+            if (count >= 0) {
+                count--;
+
+            }
+
+            if (count === -1) {
+                count = 0;
+            }
+
+            mostrarArbre();
+            console.log(count);
+
+            setTimeout(yourFunction, 1000);
+        }
+
+        yourFunction();
+
+
+
+        function sol() {
+            count++;
+        }
+
+        // function showImage(id) {
+        //     document.getElementById(id).style.visibility = document.getElementById(id).style.visibility == 'visible' ? 'hidden' : 'visible';
+        // }
+
+        function showImage(id) {
+            document.getElementById(id).style.visibility = 'visible';
+        }
+
+
+        function hideImage(id) {
+            document.getElementById(id).style.visibility = 'hidden';
+        }
+
+
+    </script>
+
+</body>
+
+</html>

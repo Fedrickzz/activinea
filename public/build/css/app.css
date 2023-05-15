@@ -1861,4 +1861,133 @@ h3 {
   align-items: center;
   border-radius: 10px;
 }
+
+#bg {
+  position: relative;
+  margin: 1%;
+  width: 98%;
+  height: 90%;
+  border-radius: 5px;
+}
+
+.imatge {
+  margin-top: 10px;
+  width: 95% !important;
+  height: 95% !important;
+  position: absolute;
+}
+
+/* btn */
+.btn-sol-1,
+.btn-sol-2 {
+  width: 9%;
+  height: auto;
+  z-index: 5;
+  cursor: pointer;
+  position: absolute;
+  top: 5%;
+  left: 80%;
+}
+.btn-sol-1:hover,
+.btn-sol-2:hover {
+  filter: brightness(2);
+}
+
+.btn-pluja-1,
+.btn-pluja-2 {
+  width: 9%;
+  height: auto;
+  z-index: 5;
+  cursor: pointer;
+  position: absolute;
+  top: 33%;
+  left: 80%;
+}
+.btn-pluja-1:hover,
+.btn-pluja-2:hover {
+  filter: brightness(2);
+}
+
+/* dia */
+.cel {
+  z-index: 0;
+}
+
+.terra {
+  z-index: 1;
+}
+
+.llum {
+  z-index: 1;
+}
+
+/* tormenta */
+.cel-fosc {
+  z-index: 0;
+}
+
+.pluja {
+  z-index: 1;
+}
+
+.terra {
+  z-index: 2;
+}
+
+.nuvols {
+  z-index: 4 !important;
+}
+
+/* efecte pluja */
+.rain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../../img/activitats/hort/img/rain.png);
+  animation: rain 0.3s linear infinite;
+  z-index: 3 !important;
+}
+
+/* .rain:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  animation: lighting .3s linear infinite
+} */
+@keyframes rain {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 20% 100%;
+  }
+}
+/* @keyframes lighting {
+  0%{
+      opacity: 0;
+  }
+  10%{
+      opacity: 0;
+  }
+  11%{
+      opacity: 1;
+  }
+  14%{
+      opacity: 0;
+  }
+  20%{
+      opacity: 0;
+  }
+  21%{
+      opacity: 1;
+  }
+  24%{
+      opacity: 0;
+  }
+  100%{
+      opacity: 0;
+  }
+} */
 /*# sourceMappingURL=app.css.map */
