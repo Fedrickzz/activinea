@@ -108,6 +108,11 @@
   border-radius: 10px;
 }
 
+#jocTxt {
+  font-weight: bold;
+  margin-left: 30px;
+}
+
 // joc
 
 #bg {
@@ -156,7 +161,7 @@
   left: 80%;
 
   &:hover {
-    filter: brightness(2);
+    filter: brightness(0.7);
   }
 }
 

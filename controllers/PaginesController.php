@@ -33,8 +33,15 @@ class PaginesController {
 
     public static function llibres(Router $router) {
 
-        $router->render('pagines/llibres', [
+        $router->render('pagines/llibres-inclusius', [
             'titol' => 'Llibres inclusius'
+        ]);
+    }
+
+    public static function plans(Router $router) {
+
+        $router->render('pagines/plans', [
+            'titol' => 'Els nostres Productes i Serveis'
         ]);
     }
 

@@ -81,26 +81,28 @@
 <div id="mapa" class="mapa"></div>
 
 <section class="boletos">
-    <h2 class="boletos__heading">Plans de subscripció</h2>
+    <h2 class="boletos__heading">Els nostres Productes i Serveis</h2>
     <p class="boletos__descripcio">Preus material didàctic</p>
 
     <div class="boletos__grid">
+        
+
+        <div <?php aos_animacio(); ?> class="boleto boleto--gratis">
+            <h4 class="boleto__logo">Programari</h4>
+            <p class="boleto__plan">Educatiu Adaptat</p>
+            <p class="boleto__preu">90€</p>
+        </div>
+
         <div <?php aos_animacio(); ?> class="boleto boleto--presencial">
-            <h4 class="boleto__logo">Activinea</h4>
-            <p class="boleto__plan">Presencial</p>
-            <p class="boleto__preu">199€</p>
+            <h4 class="boleto__logo">Material Educatiu</h4>
+            <p class="boleto__plan">Format Digital</p>
+            <p class="boleto__preu">165€</p>
         </div>
 
         <div <?php aos_animacio(); ?> class="boleto boleto--virtual">
-            <h4 class="boleto__logo">Activinea</h4>
-            <p class="boleto__plan">Virtual</p>
-            <p class="boleto__preu">49€</p>
-        </div>
-
-        <div <?php aos_animacio(); ?> class="boleto boleto--gratis">
-            <h4 class="boleto__logo">Activinea</h4>
-            <p class="boleto__plan">Gratuït</p>
-            <p class="boleto__preu">0€</p>
+            <h4 class="boleto__logo">Programes formatius</h4>
+            <p class="boleto__plan">Per professionals del sector</p>
+            <p class="boleto__preu">250€</p>
         </div>
     </div>
 </section>

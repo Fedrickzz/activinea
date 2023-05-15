@@ -19,6 +19,7 @@ $router->get('/', [PaginesController::class, 'index']);
 $router->get('/404', [PaginesController::class, 'error']);
 $router->get('/info', [PaginesController::class, 'info']);
 $router->get('/llibres', [PaginesController::class, 'llibres']);
+$router->get('/plans', [PaginesController::class, 'plans']);
 
 
 // Login

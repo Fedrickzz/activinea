@@ -1,5 +1,5 @@
 <?php
-    include_once __DIR__ .'/alert-message.php';
+    include_once __DIR__ .'/joc_el_cicle.php';
 ?>
 
 <div id="main-casa">

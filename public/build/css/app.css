@@ -391,6 +391,10 @@ h3 {
 .activinea__text {
   line-height: 2;
 }
+.activinea__imatge {
+  width: 90%;
+  height: auto;
+}
 
 .paquets__grid {
   width: min(95%, 140rem);
@@ -1332,7 +1336,7 @@ h3 {
 
 .footer {
   background-color: #ff6da0;
-  margin-top: 5rem;
+  margin-top: 16rem;
   padding-top: 3rem;
   color: #ffffff;
 }
@@ -1862,6 +1866,11 @@ h3 {
   border-radius: 10px;
 }
 
+#jocTxt {
+  font-weight: bold;
+  margin-left: 30px;
+}
+
 #bg {
   position: relative;
   margin: 1%;
@@ -1905,7 +1914,7 @@ h3 {
 }
 .btn-pluja-1:hover,
 .btn-pluja-2:hover {
-  filter: brightness(2);
+  filter: brightness(0.7);
 }
 
 /* dia */

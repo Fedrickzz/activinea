@@ -91,27 +91,7 @@
         </select>
     </div>
 
-    <div class="formulari__camp">
-        <label for="fileToUpload" class="formulari__label">Imatge</label>
-        <input
-            type="file"
-            class="formulari__input formulari__input--file"
-            id="fileToUpload"
-            name="fileToUpload"
-        >
-    </div>
-
-    <?php if(isset($usuari->imatge_actual)) { ?>
-        <p class="formulario__texto">Imatge Actual:</p>
-        <div class="formulario__imatge">
-            <picture>
-                <source srcset="<?php echo $_ENV['HOST'] . '/img/speakers/' . $usuari->imatge; ?>.webp" type="image/webp">
-                <source srcset="<?php echo $_ENV['HOST'] . '/img/speakers/' . $usuari->imatge; ?>" type="image/png">
-                <img src="<?php echo $_ENV['HOST'] . '/img/speakers/' . $usuari->imatge; ?>" alt="imatge usuari">
-            </picture>
-        </div>
-
-    <?php } ?>
+    
 </fieldset>
 
 

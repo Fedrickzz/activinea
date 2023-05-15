@@ -37,9 +37,9 @@ class Email {
          $mail->CharSet = 'UTF-8';
 
          $contingut = '<html>';
-         $contingut .= "<p><strong>Hola " . $this->nom .  "</strong> Has Registrat Correctament la teva compte en Activinea; però és necessari confirmar-la</p>";
+         $contingut .= "<p><strong>Hola " . $this->nom .  "</strong> Has registrat correctament el teu compte a Activinea, però és necessari confirmar-la:</p>";
          $contingut .= "<p>Prem aquí: <a href='" . $_ENV['HOST'] . "/confirmar-compte?token=" . $this->token . "'>Confirmar Compte</a>";       
-         $contingut .= "<p>Si tu no has creat aquest compte; pots ignorar el missatge</p>";
+         $contingut .= "<p>Si tu no has creat aquest compte, pots ignorar el missatge.</p>";
          $contingut .= '</html>';
          $mail->Body = $contingut;
 
