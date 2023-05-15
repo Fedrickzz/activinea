@@ -1833,4 +1833,32 @@ h3 {
   border-color: rgb(154, 47, 47);
   font-weight: bold;
 }
+
+/* joc */
+#jocBack {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  font-weight: bold;
+}
+
+#jocBack.show {
+  display: flex;
+}
+
+#jocWrap {
+  width: 90%;
+  height: 90%;
+  padding: 20px;
+  background: #fff;
+  align-items: center;
+  border-radius: 10px;
+}
 /*# sourceMappingURL=app.css.map */

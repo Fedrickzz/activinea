@@ -17,14 +17,14 @@
 
 <script>
 
-    $(document).ready(function (e) {
-    //   $('img[usemap]').rwdImageMaps();
+    // $(document).ready(function (e) {
+    // //   $('img[usemap]').rwdImageMaps();
 
-    //   $('area').on('click', function () {
-    //     // alert($(this).attr('alt') + );
-    //     console.log($(this)[0].coords);
-    //   });
-    });
+    // //   $('area').on('click', function () {
+    // //     // alert($(this).attr('alt') + );
+    // //     console.log($(this)[0].coords);
+    // //   });
+    // });
 
     $(document).ready(function(){
         $('.toast__close').click(function(e){
