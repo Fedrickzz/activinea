@@ -1,4 +1,6 @@
-
+<?php
+    include_once __DIR__ .'/alert-message.php';
+?>
 
 <div id="main-casa">
     <img src="/img/activitats/hort.png" usemap="#image-map">
@@ -6,7 +8,7 @@
 
     <map name="image-map">
         <area target="_self" alt="TORNAR ENRERE" title="TORNAR ENRERE" href="/admin/activitats" coords="0,-1,324,692" shape="rect">
-        <area target="_self" alt="HORT" title="JOC HORT" coords="602,330,1808,853" shape="rect">
+        <area target="_self" alt="HORT" title="JOC HORT" coords="602,330,1808,853" shape="rect" onclick="dbox('VOLS COMENÇAR EL JOC?')">
     </map>
 </div>
 
