@@ -157,7 +157,7 @@ class AuthController {
         ]);
     }
 
-    public static function reestablir(Router $router) {
+    public static function restablir(Router $router) {
 
         $token = s($_GET['token']);
 
@@ -202,8 +202,8 @@ class AuthController {
         $alertes = Usuari::getAlertes();
         
         // Renderitzar la vista
-        $router->render('auth/reestablir', [
-            'titol' => 'Reestablir Contrasenya',
+        $router->render('auth/restablir', [
+            'titol' => 'Restablir Contrasenya',
             'alertes' => $alertes,
             'token_valid' => $token_valid
         ]);

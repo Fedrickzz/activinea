@@ -35,9 +35,9 @@ $router->post('/registre', [AuthController::class, 'registre']);
 $router->get('/oblidada', [AuthController::class, 'oblidada']);
 $router->post('/oblidada', [AuthController::class, 'oblidada']);
 
-// Reestablir la nova contrasenya
-$router->get('/reestablir', [AuthController::class, 'reestablir']);
-$router->post('/reestablir', [AuthController::class, 'reestablir']);
+// Restablir la nova contrasenya
+$router->get('/restablir', [AuthController::class, 'restablir']);
+$router->post('/restablir', [AuthController::class, 'restablir']);
 
 // Confirmació de la nova contrasenya
 $router->get('/missatge', [AuthController::class, 'missatge']);

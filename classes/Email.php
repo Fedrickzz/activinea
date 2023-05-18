@@ -61,15 +61,15 @@ class Email {
     
         $mail->setFrom('compte@activinea.com');
         $mail->addAddress($this->email, $this->nom);
-        $mail->Subject = 'Reestableix la teva contrasenya';
+        $mail->Subject = 'Restableix la teva contrasenya';
 
         // Set HTML
         $mail->isHTML(TRUE);
         $mail->CharSet = 'UTF-8';
 
         $contingut = '<html>';
-        $contingut .= "<p><strong>Hola " . $this->nom .  "</strong> Has solicitat reestablir la teva contrasenya, seguiex el següent enllaç.</p>";
-        $contingut .= "<p>Prem aquí: <a href='" . $_ENV['HOST'] . "/reestablir?token=" . $this->token . "'>Reestablir Contrasenya</a>";        
+        $contingut .= "<p><strong>Hola " . $this->nom .  "</strong> Has solicitat restablir la teva contrasenya, seguiex el següent enllaç.</p>";
+        $contingut .= "<p>Prem aquí: <a href='" . $_ENV['HOST'] . "/restablir?token=" . $this->token . "'>Restablir Contrasenya</a>";        
         $contingut .= "<p>Si tu no sol·licitat aquest canvi, pots ignorar el missatge</p>";
         $contingut .= '</html>';
         $mail->Body = $contingut;
