@@ -1,6 +1,6 @@
 <main class="agenda">
     <h2 class="agenda__heading">OBJECTIUS</h2>
-    <p class="agenda__descripcio">
+    <p class="formulari__legend">
     El nostre objectiu com a empresa és proporcionar materials d'aprenentatge adaptats
     i personalitzats que ajudin a aquests nens i nenes a desenvolupar les seves
     habilitats i aconseguir els seus objectius educatius. 

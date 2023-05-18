@@ -59,7 +59,7 @@ class Email {
         $mail->Username = $_ENV['EMAIL_USER'];
         $mail->Password = $_ENV['EMAIL_PASS'];
     
-        $mail->setFrom('ompte@activinea.com');
+        $mail->setFrom('compte@activinea.com');
         $mail->addAddress($this->email, $this->nom);
         $mail->Subject = 'Reestableix la teva contrasenya';
 

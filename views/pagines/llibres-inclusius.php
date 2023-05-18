@@ -21,7 +21,7 @@
             És un conte visual on s'acompanya a l'alumne a viure una història a través de les
             imatges representades. La història tracta sobre d’uns nois que passegen pel bosc i
             troben a un gos abandonat al voltant de la casa. Aquests se’ls emporta cap a casa a
-            donar-li de menjar i aigua. La història té un fons conciliador, ja que vol donar un
+            donar-li menjar i aigua. La història té un fons conciliador, ja que vol donar un
             missatge sobre el maltractament animal.
             </p>
             

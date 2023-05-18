@@ -1,7 +1,7 @@
 <?php 
 
 use Dotenv\Dotenv;
-use Model\ActiveRecord;
+use Model\Middleware;
 require __DIR__ . '/../vendor/autoload.php';
 
 // Afegir Dotenv
@@ -12,4 +12,4 @@ require 'funcions.php';
 require 'database.php';
 
 // Connectar a la base de dades
-ActiveRecord::setDB($db);
+Middleware::setDB($db);

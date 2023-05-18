@@ -6,7 +6,7 @@
             </h3>
 
             <p class="footer__text">
-                Activinea és un projecte dedicat a l'educació per a nens i nenes amb necessitats educatives especials, que ofereix material didàctic, assesorament i recuros TIC.
+                Activinea és un projecte dedicat a l'educació per a nens i nenes amb necessitats educatives especials, que ofereix material didàctic, assessorament i recursos TIC.
             </p>
             
         </div>

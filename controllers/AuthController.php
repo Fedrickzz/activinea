@@ -142,13 +142,8 @@ class AuthController {
                     $email->enviarInstruccions();
 
 
-                    // Imprimir la alerta
-                    // Usuari::setAlerta('exit', 'Hemos enviado las instrucciones a tu email');
-
                     $alertes['success'][] = 'Hem enviat les instruccions al teu email';
                 } else {
-                 
-                    // Usuari::setAlerta('error', 'El Usuari no existe o no esta confirmat');
 
                     $alertes['error'][] = "L'Usuari no existeix o no està confirmat";
                 }

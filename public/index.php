@@ -72,7 +72,9 @@ $router->get('/admin/activitats/sala-jocs', [ActivitatsController::class, 'jocs'
 $router->get('/admin/activitats/sala-lavabo', [ActivitatsController::class, 'lavabo']);
 $router->get('/admin/activitats/sala-sala_estar', [ActivitatsController::class, 'estar']);
 $router->get('/admin/activitats/sala-cuina', [ActivitatsController::class, 'cuina']);
+
 $router->get('/admin/activitats/sala-hort', [ActivitatsController::class, 'hort']);
+$router->post('/admin/activitats/sala-hort', [ActivitatsController::class, 'hort']);
 
 
 

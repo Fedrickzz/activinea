@@ -14,7 +14,7 @@
             <p class="activinea__descripcio">PRESENTACIÓ</p>
 
             <p <?php aos_animacio(); ?> class="activinea__text">
-            La nostra empresa Activinea, es dedica a crear material per nens i nenes amb necessitats educatives especials (NEE). Treballem realitzant investigacions de les necessitats educatives així com activitats, tallers i formació per als/les mestres tant de l'escola ordinària com les escoles de NEE de la comarca del gironès
+            La nostra empresa Activinea, es dedica a crear material per nens i nenes amb necessitats educatives especials (NEE). Treballem realitzant investigacions de les necessitats educatives així com activitats, tallers i formació per als/les mestres tant de l'escola ordinària com les escoles de NEE de la comarca del gironès.
             </p>
             
         </div>
@@ -70,7 +70,7 @@
                 <br>
                 La nostra finalitat és proporcionar un suport a les escoles i als docents per a
                 treballar amb nens i nenes amb necessitats educatives especials de manera
-                inclusiva, és a dir , que en una aula ordinària es pugui trobar nens i nenes amb
+                inclusiva, és a dir, que en una aula ordinària es pugui trobar nens i nenes amb
                 necessitats diferents que es puguin treballar de manera conjunta per tal de fomentar
                 la diversitat.
         </p>

@@ -50,8 +50,10 @@
 
     </div>
 </div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
  
 <script>
+
    function dbox(msg) {
     
         if (msg != undefined) {
@@ -86,6 +88,8 @@
     let arbre_inici = 0;
 
     let flag = true;
+    let t1;
+    let t2;
 
     document.getElementById('nuvols').style.opacity = myopacity;
     document.getElementById('pluja').style.opacity = myopacity;
@@ -99,8 +103,10 @@
     document.getElementById('arbre-6').style.opacity = arbre_inici;
 
     function MostrarArbre(sol, pluja){
+
         if (sol === 1 && pluja === 1) {
             document.getElementById('arbre-1').style.opacity = 1;
+            t1 = new Date();
         } else if (sol === 2 && pluja === 2) {
             document.getElementById('arbre-1').style.opacity = 0;
             document.getElementById('arbre-2').style.opacity = 1;
@@ -130,8 +136,15 @@
         }
 
         if (sol === 7 || pluja === 7) {
+            t2 = new Date();
+            let lapse = ((t2 - t1) / 1000).toString();
+
+            console.log(lapse);
+
             
             alert("FI DEL JOC! HAS ACONSEGUIT FER CRÉIXER UN ARBRE")
+            $.post( "/admin/activitats/sala-hort", { temps: lapse} );
+
         }
 
     }

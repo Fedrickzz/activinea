@@ -2,7 +2,7 @@
 
 namespace Model;
 
-class Usuari extends ActiveRecord {
+class Usuari extends Middleware {
     protected static $taula = 'Usuaris';
     protected static $columnesDB = ['id', 'nom', 'cognom', 'email', 'pais', 'ciutat', 'telf', 'password', 'confirmacio', 'token', 'admin'];
     

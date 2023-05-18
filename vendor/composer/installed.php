@@ -3,7 +3,7 @@
         'name' => 'fedrick/activinea',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'a426b00d9fc15a9d48f302647781697780b7daf2',
+        'reference' => '4dc86c45254ef60a50cbdfc23d2c3af3a41342e0',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'fedrick/activinea' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'a426b00d9fc15a9d48f302647781697780b7daf2',
+            'reference' => '4dc86c45254ef60a50cbdfc23d2c3af3a41342e0',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

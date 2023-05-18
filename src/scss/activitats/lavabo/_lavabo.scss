@@ -1,0 +1,85 @@
+@use 'base/variables' as v;
+
+/* btn */
+.btn-aigua {
+  width: 9%;
+  height: auto;
+  z-index: 5;
+  cursor: pointer;
+  position: absolute;
+  top: 33%;
+  left: 80%;
+
+  &:hover {
+    filter: brightness(2);
+  }
+}
+
+.btn-sabo {
+  width: 9%;
+  height: auto;
+  z-index: 5;
+  cursor: pointer;
+  position: absolute;
+  top: 5%;
+  left: 80%;
+
+  &:hover {
+    filter: brightness(2);
+  }
+}
+
+.btn-secar {
+  width: 9%;
+  height: auto;
+  z-index: 5;
+  cursor: pointer;
+  position: absolute;
+  top: 62%;
+  left: 80%;
+
+  &:hover {
+    filter: brightness(2);
+  }
+}
+
+.activat {
+  filter: brightness(2);
+}
+
+/* bg */
+.paret {
+  z-index: 0;
+}
+
+.mans {
+  z-index: 1;
+}
+
+.bruticia {
+  z-index: 2;
+}
+
+.efecte-aigua {
+  z-index: 3;
+}
+
+.efecte-sabo {
+  width: 11%;
+  height: auto;
+  z-index: 5;
+  cursor: pointer;
+  position: absolute;
+  top: 7%;
+  left: 25%;
+}
+
+.efecte-tovallola {
+  width: 36%;
+  height: auto;
+  z-index: 5;
+  cursor: pointer;
+  position: absolute;
+  top: 27%;
+  left: 29%;
+}

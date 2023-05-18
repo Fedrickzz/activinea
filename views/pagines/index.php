@@ -78,7 +78,7 @@
     </div>
 </section>
 
-<div id="mapa" class="mapa"></div>
+<!-- <div id="mapa" class="mapa"></div> -->
 
 <section class="boletos">
     <h2 class="boletos__heading">Els nostres Productes i Serveis</h2>

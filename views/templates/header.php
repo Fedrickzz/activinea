@@ -5,7 +5,7 @@
         </a>
         <nav class="navigation">
             <a href="/info" class="navigation__link">Informació</a>
-            <a href="/plans" class="navigation__link">Plans</a>
+            <a href="/plans" class="navigation__link">Serveis</a>
             <a href="/llibres" class="navigation__link">LLibres Inclusius</a>
             <a href="/registre" class="navigation__link session">Registra't</a>
             <a href="/login" class="navigation__link session">Inicia Sessió</a>
@@ -30,8 +30,7 @@ if ($endpoint == "/") {
             </a>
 
             <p class="header__text">Adaptant l'educació</p>
-            <!-- <p class="header__text header__text--modalitat">Adaptant l'educació</p> -->
-            <a href="/registre" class="header__button">Llibres Inclusius</a>
+            <a href="/llibres" class="header__button">Llibres Inclusius</a>
 
         </div>
     </div>

@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use MVC\Router;
+use Model\Punts;
 
 
 class ActivitatsController {
@@ -64,7 +65,6 @@ class ActivitatsController {
             header('Location: /login');
         }
 
-        $usuari = new Usuari;
 
         $router->render('admin/activitats/cuina/index', [
             'titol' => "Cuina"
@@ -75,6 +75,21 @@ class ActivitatsController {
         if(!is_admin()) {
             header('Location: /login');
         }
+
+
+        $punts = new Punts;
+        
+        
+        if (isset($_POST['punts'])) {
+            if(!is_admin()) {
+                header('Location: /login');
+            }
+            $_POST['id_usuari'] = strval($_SESSION['id']);
+            $punts->sincronitzar($_POST);
+            $resultat = $punts->guardar();
+
+        }
+
 
         $router->render('admin/activitats/hort/index', [
             'titol' => "Hort"

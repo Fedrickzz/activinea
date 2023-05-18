@@ -2,7 +2,7 @@
 
 namespace Model;
 
-class Llibre extends ActiveRecord {
+class Llibre extends Middleware {
     protected static $taula = 'Llibres';
     protected static $columnesDB = ['id', 'nom', 'cognom', 'ciutat', 'pais', 'imatge', 'tags', 'social'];
 

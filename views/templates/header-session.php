@@ -6,7 +6,7 @@
 
         <nav class="navigation">
             <a href="/info" class="navigation__link">Informació</a>
-            <a href="/plans" class="navigation__link">Plans</a>
+            <a href="/plans" class="navigation__link">Serveis</a>
             <a href="/llibres" class="navigation__link">LLibres Inclusius</a>
 
          

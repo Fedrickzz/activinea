@@ -17,14 +17,132 @@
   }
 }
 
-// .effect-porta-habitacio {
-//   position: relative;
-//   z-index: 1;
-//   cursor: pointer;
+#boxBack {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
 
-//   &:hover {
-//     border: 5px solid white;
-//     background-color: rgba($color: white, $alpha: 0.3);
-//     filter: brightness(2);
-//   }
-// }
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  font-weight: bold;
+}
+
+#boxBack.show {
+  display: flex;
+}
+
+#boxWrap {
+  min-width: 320px;
+  max-width: 600px;
+  padding: 20px;
+  background: #fff;
+  align-items: center;
+  border-radius: 10px;
+}
+
+#si[type='button'],
+#si[type='submit'],
+#si[type='reset'],
+#no[type='button'],
+#no[type='submit'],
+#no[type='reset'] {
+  color: #fff;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-top: 5px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  font-family: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#si {
+  position: relative;
+  margin-left: 20px;
+  background-color: rgb(99, 221, 51);
+  border-color: rgb(99, 221, 51);
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: rgb(60, 138, 30);
+    border-color: rgb(60, 138, 30);
+    font-weight: bold;
+  }
+}
+
+#no {
+  position: relative;
+  margin-left: 20px;
+  border-color: #d33;
+  background-color: #d33;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: rgb(154, 47, 47);
+    border-color: rgb(154, 47, 47);
+    font-weight: bold;
+  }
+}
+
+/* joc */
+#jocBack {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  font-weight: bold;
+}
+
+#jocBack.show {
+  display: flex;
+}
+
+#jocWrap {
+  width: 90%;
+  height: 90%;
+  padding: 20px;
+  background: #fff;
+  align-items: center;
+  border-radius: 10px;
+}
+
+#jocTxt {
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+// joc
+
+#bg {
+  position: relative;
+  margin: 1%;
+  width: 98%;
+  height: 90%;
+  border-radius: 5px;
+}
+
+.imatge {
+  margin-top: 10px;
+  width: 95% !important;
+  height: 95% !important;
+  position: absolute;
+}

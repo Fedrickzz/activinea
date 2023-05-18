@@ -15,7 +15,7 @@
         </div>
 
         <div  class="activinea__contingut">
-            <p class="activinea__descripcio">Productes adaptats per a nens amb necessitats educatives especials</p>
+            <p class="activinea__descripcio">Productes adaptats per a nens i nenes amb necessitats educatives especials</p>
 
             <p <?php aos_animacio(); ?> class="activinea__text">
             Els productes que s’ofereixen a Activinea inclouen diverses solucions a necessitats

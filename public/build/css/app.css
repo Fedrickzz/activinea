@@ -1075,7 +1075,7 @@ h3 {
 .accions__link {
   color: #1a1b15;
   font-size: 1.6rem;
-  font-weight: 300;
+  font-weight: 700;
 }
 
 .hores {
@@ -1256,11 +1256,6 @@ h3 {
   text-transform: uppercase;
   text-align: center;
 }
-@media only screen and (max-width: 1080px) {
-  .navigation__link {
-    display: none;
-  }
-}
 .navigation__link--actual, .navigation__link:hover {
   background-color: #ff6da0;
   color: #ffffff;
@@ -1336,7 +1331,7 @@ h3 {
 
 .footer {
   background-color: #ff6da0;
-  margin-top: 16rem;
+  margin-top: 30rem;
   padding-top: 3rem;
   color: #ffffff;
 }
@@ -1999,4 +1994,84 @@ h3 {
       opacity: 0;
   }
 } */
+/* btn */
+.btn-aigua {
+  width: 9%;
+  height: auto;
+  z-index: 5;
+  cursor: pointer;
+  position: absolute;
+  top: 33%;
+  left: 80%;
+}
+.btn-aigua:hover {
+  filter: brightness(2);
+}
+
+.btn-sabo {
+  width: 9%;
+  height: auto;
+  z-index: 5;
+  cursor: pointer;
+  position: absolute;
+  top: 5%;
+  left: 80%;
+}
+.btn-sabo:hover {
+  filter: brightness(2);
+}
+
+.btn-secar {
+  width: 9%;
+  height: auto;
+  z-index: 5;
+  cursor: pointer;
+  position: absolute;
+  top: 62%;
+  left: 80%;
+}
+.btn-secar:hover {
+  filter: brightness(2);
+}
+
+.activat {
+  filter: brightness(2);
+}
+
+/* bg */
+.paret {
+  z-index: 0;
+}
+
+.mans {
+  z-index: 1;
+}
+
+.bruticia {
+  z-index: 2;
+}
+
+.efecte-aigua {
+  z-index: 3;
+}
+
+.efecte-sabo {
+  width: 11%;
+  height: auto;
+  z-index: 5;
+  cursor: pointer;
+  position: absolute;
+  top: 7%;
+  left: 25%;
+}
+
+.efecte-tovallola {
+  width: 36%;
+  height: auto;
+  z-index: 5;
+  cursor: pointer;
+  position: absolute;
+  top: 27%;
+  left: 29%;
+}
 /*# sourceMappingURL=app.css.map */

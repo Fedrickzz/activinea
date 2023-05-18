@@ -33,7 +33,7 @@
     </form>
 
     <div class="accions">
-        <a href="/registre" class="accions__link">Encara no tens un compte? Crea una</a>
+        <a href="/registre" class="accions__link">Encara no tens un compte? Crea un</a>
         <a href="/oblidada" class="accions__link">Has oblidat la teva contrasenya?</a>
     </div>
 </main>
