@@ -1,11 +1,6 @@
 <h2 class="dashboard__heading"><?php echo $titol; ?></h2>
 
-<div class="dashboard__contenidor-button">
-    <a class="dashboard__button" href="/user/registrats/crear">
-        <i class="fa-solid fa-circle-plus"></i>
-        Afegir Usuari
-    </a>
-</div>
+
 
 <div class="dashboard__contenidor">
     <?php if(!empty($usuaris)) { ?>
