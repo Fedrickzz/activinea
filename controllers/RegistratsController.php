@@ -13,21 +13,21 @@ class RegistratsController {
         }
 
         if ($_SESSION['admin'] != 1) {
-            header('Location: /admin/dashboard');
+            header('Location: /user/dashboard');
         }
         
         $pagina_actual = $_GET['page'];
         $pagina_actual = filter_var($pagina_actual, FILTER_VALIDATE_INT);
 
         if(!$pagina_actual || $pagina_actual < 1) {
-            header('Location: /admin/registrats?page=1');
+            header('Location: /user/registrats?page=1');
         }
         $registres_per_pagina = 5;
         $total = Usuari::total();
         $paginacio = new Paginacio($pagina_actual, $registres_per_pagina, $total);
 
         if($paginacio->total_pagines() < $pagina_actual) {
-            header('Location: /admin/registrats?page=1');
+            header('Location: /user/registrats?page=1');
         }
 
         $usuaris = Usuari::paginar($registres_per_pagina, $paginacio->offset());
@@ -47,7 +47,7 @@ class RegistratsController {
         }
 
         if ($_SESSION['admin'] != 1) {
-            header('Location: /admin/dashboard');
+            header('Location: /user/dashboard');
         }
 
         $alertes = [];
@@ -99,7 +99,7 @@ class RegistratsController {
                 $resultat = $usuari->guardar();
 
                 if($resultat) {
-                    header('Location: /admin/registrats');
+                    header('Location: /user/registrats');
                 }
             }
         }
@@ -119,7 +119,7 @@ class RegistratsController {
         }
 
         if ($_SESSION['admin'] != 1) {
-            header('Location: /admin/dashboard');
+            header('Location: /user/dashboard');
         }
 
         $alertes = [];
@@ -128,14 +128,14 @@ class RegistratsController {
         $id = filter_var($id, FILTER_VALIDATE_INT);
 
         if(!$id) {
-            header('Location: /admin/registrats');
+            header('Location: /user/registrats');
         }
 
         // Obtenir usuari a Editar
         $usuari = usuari::find($id);
 
         if(!$usuari) {
-            header('Location: /admin/registrats');
+            header('Location: /user/registrats');
         }
 
         $usuari->imatge_actual = $usuari->imatge;
@@ -177,7 +177,7 @@ class RegistratsController {
                 }
                 $resultat = $usuari->guardar();
                 if($resultat) {
-                    header('Location: /admin/registrats');
+                    header('Location: /user/registrats');
                 }
             }
 
@@ -195,7 +195,7 @@ class RegistratsController {
     public static function eliminar() {
 
         if ($_SESSION['admin'] != 1) {
-            header('Location: /admin/dashboard');
+            header('Location: /user/dashboard');
         }
  
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -206,11 +206,11 @@ class RegistratsController {
             $id = $_POST['id'];
             $usuari = usuari::find($id);
             if(!isset($usuari) ) {
-                header('Location: /admin/registrats');
+                header('Location: /user/registrats');
             }
             $resultat = $usuari->eliminar();
             if($resultat) {
-                header('Location: /admin/registrats');
+                header('Location: /user/registrats');
             }
         }
 

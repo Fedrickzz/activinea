@@ -1,7 +1,7 @@
 <h2 class="dashboard__heading"><?php echo $titol; ?></h2>
 
 <div class="dashboard__contenidor-button">
-    <a class="dashboard__button" href="/admin/llibres/crear">
+    <a class="dashboard__button" href="/user/llibres/crear">
         <i class="fa-solid fa-circle-plus"></i>
         Afegir Llibre
     </a>
@@ -28,12 +28,12 @@
                             <?php echo $llibre->cognom; ?>
                         </td>
                         <td class="table__td--accions">
-                            <a class="table__accio table__accio--editar" href="/admin/llibres/editar?id=<?php echo $llibre->id; ?>">
+                            <a class="table__accio table__accio--editar" href="/user/llibres/editar?id=<?php echo $llibre->id; ?>">
                                 <i class="fa-solid fa-file-pen"></i>
                                 Editar
                             </a>
 
-                            <form method="POST" action="/admin/llibres/eliminar" class="table__formulari">
+                            <form method="POST" action="/user/llibres/eliminar" class="table__formulari">
                                 <input type="hidden" name="id" value="<?php echo $llibre->id; ?>">
                                 <button class="table__accio table__accio--eliminar" type="submit">
                                     <i class="fa-solid fa-circle-xmark"></i>

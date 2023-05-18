@@ -1,7 +1,7 @@
 <h2 class="dashboard__heading"><?php echo $titol; ?></h2>
 
 <div class="dashboard__contenidor-button">
-    <a class="dashboard__button" href="/admin/registrats">
+    <a class="dashboard__button" href="/user/registrats">
         <i class="fa-solid fa-circle-arrow-left"></i>
         Tornar
     </a>

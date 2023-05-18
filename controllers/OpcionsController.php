@@ -18,14 +18,14 @@ class OpcionsController {
         $id = filter_var($id, FILTER_VALIDATE_INT);
 
         if(!$id) {
-            header('Location: /admin/opcions');
+            header('Location: /user/opcions');
         }
 
         // Obtenir usuari a Editar
         $usuari = usuari::find($id);
 
         if(!$usuari) {
-            header('Location: /admin/opcions');
+            header('Location: /user/opcions');
         }
 
         $usuari->imatge_actual = $usuari->imatge;
@@ -67,7 +67,7 @@ class OpcionsController {
                 }
                 $resultat = $usuari->guardar();
                 if($resultat) {
-                    header('Location: /admin/opcions');
+                    header('Location: /user/opcions');
                 }
             }
         }

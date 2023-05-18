@@ -10,7 +10,7 @@
             <a href="/llibres" class="navigation__link">LLibres Inclusius</a>
 
          
-            <a href="/admin/dashboard" class="navigation__link session">Panell Usuari</a>
+            <a href="/user/dashboard" class="navigation__link session">Panell Usuari</a>
             <a class="navigation__logout">
                 <form method="POST" action="/logout" >
                     <button type="submit" class="button-80" role="button">TANCAR SESSIÓ</button>

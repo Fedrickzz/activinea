@@ -143,7 +143,7 @@
 
             
             alert("FI DEL JOC! HAS ACONSEGUIT FER CRÉIXER UN ARBRE")
-            $.post( "/admin/activitats/sala-hort", { temps: lapse} );
+            $.post( "/user/activitats/sala-hort", { temps: lapse} );
 
         }
 

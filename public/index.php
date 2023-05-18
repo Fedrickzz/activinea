@@ -44,37 +44,37 @@ $router->get('/missatge', [AuthController::class, 'missatge']);
 $router->get('/confirmar-compte', [AuthController::class, 'confirmar']);
 
 // Àrea d'administració
-$router->get('/admin/dashboard', [DashboardController::class, 'index']);
+$router->get('/user/dashboard', [DashboardController::class, 'index']);
 
 // llibres
-$router->get('/admin/llibres', [LLibresController::class, 'index']);
-$router->get('/admin/llibres/crear', [LLibresController::class, 'crear']);
-$router->post('/admin/llibres/crear', [LLibresController::class, 'crear']);
-$router->get('/admin/llibres/editar', [LLibresController::class, 'editar']);
-$router->post('/admin/llibres/editar', [LLibresController::class, 'editar']);
-$router->post('/admin/llibres/eliminar', [LLibresController::class, 'eliminar']);
+$router->get('/user/llibres', [LLibresController::class, 'index']);
+$router->get('/user/llibres/crear', [LLibresController::class, 'crear']);
+$router->post('/user/llibres/crear', [LLibresController::class, 'crear']);
+$router->get('/user/llibres/editar', [LLibresController::class, 'editar']);
+$router->post('/user/llibres/editar', [LLibresController::class, 'editar']);
+$router->post('/user/llibres/eliminar', [LLibresController::class, 'eliminar']);
 
 // Usuaris
-$router->get('/admin/registrats', [RegistratsController::class, 'index']);
-$router->get('/admin/registrats/crear', [RegistratsController::class, 'crear']);
-$router->post('/admin/registrats/crear', [RegistratsController::class, 'crear']);
-$router->get('/admin/registrats/editar', [RegistratsController::class, 'editar']);
-$router->post('/admin/registrats/editar', [RegistratsController::class, 'editar']);
-$router->post('/admin/registrats/eliminar', [RegistratsController::class, 'eliminar']);
+$router->get('/user/registrats', [RegistratsController::class, 'index']);
+$router->get('/user/registrats/crear', [RegistratsController::class, 'crear']);
+$router->post('/user/registrats/crear', [RegistratsController::class, 'crear']);
+$router->get('/user/registrats/editar', [RegistratsController::class, 'editar']);
+$router->post('/user/registrats/editar', [RegistratsController::class, 'editar']);
+$router->post('/user/registrats/eliminar', [RegistratsController::class, 'eliminar']);
 
-$router->get('/admin/opcions', [OpcionsController::class, 'index']);
-$router->post('/admin/opcions', [OpcionsController::class, 'index']);
+$router->get('/user/opcions', [OpcionsController::class, 'index']);
+$router->post('/user/opcions', [OpcionsController::class, 'index']);
 
 // Activitats
-$router->get('/admin/activitats', [ActivitatsController::class, 'index']);
-$router->get('/admin/activitats/sala-habitacio', [ActivitatsController::class, 'habitacio']);
-$router->get('/admin/activitats/sala-jocs', [ActivitatsController::class, 'jocs']);
-$router->get('/admin/activitats/sala-lavabo', [ActivitatsController::class, 'lavabo']);
-$router->get('/admin/activitats/sala-sala_estar', [ActivitatsController::class, 'estar']);
-$router->get('/admin/activitats/sala-cuina', [ActivitatsController::class, 'cuina']);
+$router->get('/user/activitats', [ActivitatsController::class, 'index']);
+$router->get('/user/activitats/sala-habitacio', [ActivitatsController::class, 'habitacio']);
+$router->get('/user/activitats/sala-jocs', [ActivitatsController::class, 'jocs']);
+$router->get('/user/activitats/sala-lavabo', [ActivitatsController::class, 'lavabo']);
+$router->get('/user/activitats/sala-sala_estar', [ActivitatsController::class, 'estar']);
+$router->get('/user/activitats/sala-cuina', [ActivitatsController::class, 'cuina']);
 
-$router->get('/admin/activitats/sala-hort', [ActivitatsController::class, 'hort']);
-$router->post('/admin/activitats/sala-hort', [ActivitatsController::class, 'hort']);
+$router->get('/user/activitats/sala-hort', [ActivitatsController::class, 'hort']);
+$router->post('/user/activitats/sala-hort', [ActivitatsController::class, 'hort']);
 
 
 

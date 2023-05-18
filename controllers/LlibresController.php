@@ -14,7 +14,7 @@ class LlibresController {
         }
 
         if ($_SESSION['admin'] != 1) {
-            header('Location: /admin/dashboard');
+            header('Location: /user/dashboard');
         }
 
         
@@ -23,14 +23,14 @@ class LlibresController {
         $pagina_actual = filter_var($pagina_actual, FILTER_VALIDATE_INT);
 
         if(!$pagina_actual || $pagina_actual < 1) {
-            header('Location: /admin/llibres?page=1');
+            header('Location: /user/llibres?page=1');
         }
         $registres_per_pagina = 10;
         $total = Llibre::total();
         $paginacio = new Paginacio($pagina_actual, $registres_per_pagina, $total);
 
         if($paginacio->total_pagines() < $pagina_actual) {
-            header('Location: /admin/llibres?page=1');
+            header('Location: /user/llibres?page=1');
         }
 
         $llibres = Llibre::paginar($registres_per_pagina, $paginacio->offset());
@@ -95,7 +95,7 @@ class LlibresController {
                 $resultat = $llibre->guardar();
 
                 if($resultat) {
-                    header('Location: /admin/llibres');
+                    header('Location: /user/llibres');
                 }
             }
         }
@@ -120,14 +120,14 @@ class LlibresController {
         $id = filter_var($id, FILTER_VALIDATE_INT);
 
         if(!$id) {
-            header('Location: /admin/llibres');
+            header('Location: /user/llibres');
         }
 
         // Obtenir el llibre per editar
         $llibre = Llibre::find($id);
 
         if(!$llibre) {
-            header('Location: /admin/llibres');
+            header('Location: /user/llibres');
         }
 
         $llibre->imatge_actual = $llibre->imatge;
@@ -172,7 +172,7 @@ class LlibresController {
                 // Guardar en la BD
                 $resultat = $llibre->guardar();
                 if($resultat) {
-                    header('Location: /admin/llibres');
+                    header('Location: /user/llibres');
                 }
             }
 
@@ -197,11 +197,11 @@ class LlibresController {
             $id = $_POST['id'];
             $llibre = llibre::find($id);
             if(!isset($llibre) ) {
-                header('Location: /admin/llibres');
+                header('Location: /user/llibres');
             }
             $resultat = $llibre->eliminar();
             if($resultat) {
-                header('Location: /admin/llibres');
+                header('Location: /user/llibres');
             }
         }
 

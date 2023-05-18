@@ -1,7 +1,7 @@
 <h2 class="dashboard__heading"><?php echo $titol; ?></h2>
 
 <div class="dashboard__contenidor-button">
-    <a class="dashboard__button" href="/admin/registrats/crear">
+    <a class="dashboard__button" href="/user/registrats/crear">
         <i class="fa-solid fa-circle-plus"></i>
         Afegir Usuari
     </a>
@@ -36,12 +36,12 @@
                             ?>
                         </td>
                         <td class="table__td--accions">
-                            <a class="table__accio table__accio--editar" href="/admin/registrats/editar?id=<?php echo $usuari->id; ?>">
+                            <a class="table__accio table__accio--editar" href="/user/registrats/editar?id=<?php echo $usuari->id; ?>">
                                 <i class="fa-solid fa-user-pen"></i>
                                 Editar
                             </a>
 
-                            <form method="POST" action="/admin/registrats/eliminar" class="table__formulari">
+                            <form method="POST" action="/user/registrats/eliminar" class="table__formulari">
                                 <input type="hidden" name="id" value="<?php echo $usuari->id; ?>">
                                 <button class="table__accio table__accio--eliminar" type="submit">
                                     <i class="fa-solid fa-circle-xmark"></i>

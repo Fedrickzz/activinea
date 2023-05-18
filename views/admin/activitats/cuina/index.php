@@ -4,8 +4,8 @@
     <img src="/img/activitats/cuina.png" usemap="#image-map">
 
     <map name="image-map">
-        <area target="_self" alt="TORNAR ENRERE" title="TORNAR ENRERE" href="/admin/activitats" coords="1,1,552,1081" shape="rect">
-        <area target="_self" alt="BOL DE FRUITA" title="BOL DE FRUITA" href="/admin/activitats" coords="852,528,1142,798" shape="rect">
+        <area target="_self" alt="TORNAR ENRERE" title="TORNAR ENRERE" href="/user/activitats" coords="1,1,552,1081" shape="rect">
+        <area target="_self" alt="BOL DE FRUITA" title="BOL DE FRUITA" href="/user/activitats" coords="852,528,1142,798" shape="rect">
     </map>
 
 </div>
