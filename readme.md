@@ -23,7 +23,7 @@ EMAIL_PASS=
 HOST=http://localhost:3000
 
 # Desenvolupar el projecte en local
-npm run dev
+gulp dev
 
 # Arrencar el projecte en local
 cd public\
