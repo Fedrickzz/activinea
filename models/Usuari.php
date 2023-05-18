@@ -33,7 +33,6 @@ class Usuari extends Middleware {
             self::$alertes['error'][] = 'La contrasenya no pot ser buida';
         }
         return self::$alertes;
-
     }
 
     // Validació per comptes nous

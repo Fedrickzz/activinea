@@ -15,7 +15,6 @@ class AuthController {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
     
             $usuari = new Usuari($_POST);
-
             $alertes = $usuari->validarLogin();
             
             if(empty($alertes)) {
@@ -48,7 +47,6 @@ class AuthController {
                 }
             }
         }
-
         $alertes = Usuari::getAlertes();
         
         // Renderitzar la vista 

@@ -59,7 +59,7 @@
     </div>
 
     <?php if(isset($llibre->imatge_actual)) { ?>
-        <p class="formulario__texto">Imatge Actual:</p>
+        <p class="formulario__texto">Imatge Actual (.png):</p>
         <div class="formulario__imatge">
             <picture>
                 <!-- <source srcset="<?php echo $_ENV['HOST'] . '/img/llibres/' . $llibre->imatge; ?>.webp" type="image/webp"> -->

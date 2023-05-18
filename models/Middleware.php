@@ -137,7 +137,7 @@ class Middleware {
         return $resultat;
     }
 
-    // Búsqueda Where amb Columna 
+    // Buscar Where amb Columna 
     public static function where($columna, $valor) {
         $query = "SELECT * FROM " . static::$taula . " WHERE ${columna} = '${valor}'";
         $resultat = self::consultarSQL($query);

@@ -8,9 +8,6 @@ use Model\Llibre;
 class PaginesController {
     public static function index(Router $router) {
 
-        // $eventos = Evento::ordenar('hora_id', 'ASC');
-
-
         // Obtenir el total de llibres
         $llibres_total = Llibre::total();
 
